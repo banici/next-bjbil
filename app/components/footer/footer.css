@@ -1,0 +1,189 @@
+.footer {
+  color: #fff;
+  background-color: #1A1E24;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-logo {
+  flex: 1;
+  max-width: 470px;
+  text-align: center;
+}
+
+.footer-logo img {
+  max-width: 70%;
+}
+
+.approved-logo img {
+  max-width: 70%;
+}
+
+.footer-wrapper {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about-box,
+.hours-box,
+.contact-box {
+  min-width: 200px;
+}
+
+.about-title,
+.hours-title,
+.contact-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.about-title::before,
+.hours-title::before,
+.contact-title::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #ec960d;
+  margin-bottom: 10px;
+}
+
+.contact-title::before {
+  width: 50px;
+}
+
+.footer ul,
+.footer p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cfcfcf;
+}
+
+.footer a {
+  color: #cfcfcf;
+}
+.footer a:hover {
+  color: #fff;
+}
+
+.social-media-box {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-media-box i {
+  font-size: 40px;
+}
+
+@media (max-width: 768px) {
+
+  /* Sektioner staplas korrekt och får luft */
+  .about-box,
+  .contact-box,
+  .hours-box {
+    flex-basis: 100%;
+    width: 100%;
+    height: auto;
+    padding: 16px 0;
+    text-align: center;
+  }
+
+  /* Ordnad läsning – logotyp sist (AAA rekommenderar logisk ordning) */
+  .footer-container {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .footer {
+    height: auto;
+    padding: 24px 0 40px;
+  }
+
+  .footer-logo {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #nyckel-footer {
+    margin-top: -10px;
+    max-width: 90%;
+  }
+
+  .approved-logo {
+    margin: 24px auto 0;
+    width: 60%;
+  }
+
+  /* Läsbarare textstorlek, bättre radavstånd för små skärmar */
+  .about-box p,
+  .contact-box li,
+  .hours-box li {
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  /* Titel – renare, större klickbarhet, bättre kontrast */
+  .about-title,
+  .contact-title,
+  .hours-title {
+    font-size: 20px;
+    padding-bottom: 6px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* Enklare visuell separation */
+  .about-title::after,
+  .contact-title::after,
+  .hours-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    margin: 8px auto 0;
+    border-bottom: 2px solid #ec960d;
+  }
+
+  /* Ingen absoluta pseudo-linjer (dåliga för screen readers) */
+  .about-title::before,
+  .contact-title::before,
+  .hours-title::before {
+    display: none !important;
+  }
+
+  .footer-wrapper {
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* Socialmedia-ikoner centreras, större touchyta */
+  .social-media-box {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .social-media-box > a > div {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gps-location {
+    width: 100%;
+    text-align: center;
+  }
+}
