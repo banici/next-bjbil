@@ -1,6 +1,7 @@
 .footer {
   color: #fff;
   background-color: #1A1E24;
+  height: auto;
   width: 100%;
   padding: 40px 0;
 }
@@ -8,17 +9,24 @@
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  margin-top: 50px;
+  justify-content: center;
 }
 
 .footer-logo {
   flex: 1;
   max-width: 470px;
   text-align: center;
+  margin-left: 100px;
+  transform: translateY(-55px);
+}
+
+#nyckel-footer {
+  transform: translateX(-45px);
 }
 
 .footer-logo img {
-  max-width: 70%;
+  max-width: 90%;
 }
 
 .approved-logo img {
@@ -29,7 +37,8 @@
   flex: 2;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 15%;
+  justify-content: center;
 }
 
 .about-box,
@@ -116,12 +125,14 @@
 
   #nyckel-footer {
     margin-top: -10px;
-    max-width: 90%;
+    max-width: 80%;
+    transform: translateX(10%);
   }
 
   .approved-logo {
     margin: 24px auto 0;
-    width: 60%;
+    width: 90%;
+    transform: translateX(14%);
   }
 
   /* Läsbarare textstorlek, bättre radavstånd för små skärmar */
