@@ -1,200 +1,277 @@
 .footer {
-  color: #fff;
-  background-color: #1A1E24;
-  height: auto;
-  width: 100%;
-  padding: 40px 0;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  justify-content: center;
-}
-
-.footer-logo {
-  flex: 1;
-  max-width: 470px;
-  text-align: center;
-  margin-left: 100px;
-  transform: translateY(-55px);
-}
-
-#nyckel-footer {
-  transform: translateX(-45px);
-}
-
-.footer-logo img {
-  max-width: 90%;
-}
-
-.approved-logo img {
-  max-width: 70%;
-}
-
-.footer-wrapper {
-  flex: 2;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15%;
-  justify-content: center;
-}
-
-.about-box,
-.hours-box,
-.contact-box {
-  min-width: 200px;
-}
-
-.about-title,
-.hours-title,
-.contact-title {
-  font-size: 22px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.about-title::before,
-.hours-title::before,
-.contact-title::before {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: #ec960d;
-  margin-bottom: 10px;
-}
-
-.contact-title::before {
-  width: 50px;
-}
-
-.footer ul,
-.footer p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #cfcfcf;
-}
-
-.footer a {
-  color: #cfcfcf;
-}
-.footer a:hover {
-  color: #fff;
-}
-
-.social-media-box {
-  margin-top: 15px;
-  display: flex;
-  gap: 20px;
-}
-
-.social-media-box i {
-  font-size: 40px;
-}
-
-@media (max-width: 768px) {
-
-  /* Sektioner staplas korrekt och får luft */
-  .about-box,
-  .contact-box,
-  .hours-box {
-    flex-basis: 100%;
-    width: 100%;
+    color: #fff;
+    background-color: #1A1E24;
     height: auto;
-    padding: 16px 0;
-    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
   }
 
-  /* Ordnad läsning – logotyp sist (AAA rekommenderar logisk ordning) */
   .footer-container {
-    flex-direction: column-reverse;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: center;
     gap: 24px;
   }
 
-  .footer {
-    height: auto;
-    padding: 24px 0 40px;
-  }
-
+  /* "Smurfan" change: Använd order för att placera logotypen först på desktop */
   .footer-logo {
-    margin: 0 auto;
+    flex: 1;
+    max-width: 470px;
     text-align: center;
-  }
-
-  #nyckel-footer {
-    margin-top: -10px;
-    max-width: 80%;
-    transform: translateX(10%);
-  }
-
-  .approved-logo {
-    margin: 24px auto 0;
-    width: 90%;
-    transform: translateX(14%);
-  }
-
-  /* Läsbarare textstorlek, bättre radavstånd för små skärmar */
-  .about-box p,
-  .contact-box li,
-  .hours-box li {
-    font-size: 16px;
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-  }
-
-  /* Titel – renare, större klickbarhet, bättre kontrast */
-  .about-title,
-  .contact-title,
-  .hours-title {
-    font-size: 20px;
-    padding-bottom: 6px;
-    color: #ffffff;
-    font-weight: 700;
-  }
-
-  /* Enklare visuell separation */
-  .about-title::after,
-  .contact-title::after,
-  .hours-title::after {
-    content: '';
-    display: block;
-    width: 60%;
-    margin: 8px auto 0;
-    border-bottom: 2px solid #ec960d;
-  }
-
-  /* Ingen absoluta pseudo-linjer (dåliga för screen readers) */
-  .about-title::before,
-  .contact-title::before,
-  .hours-title::before {
-    display: none !important;
+    margin-left: 100px;
+    transform: translateY(-55px);
+    order: 1; /* Visas först på desktop */
   }
 
   .footer-wrapper {
-    justify-content: center;
-    text-align: center;
-    gap: 16px;
-  }
-
-  /* Socialmedia-ikoner centreras, större touchyta */
-  .social-media-box {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .social-media-box > a > div {
-    width: 48px;
-    height: 48px;
-    font-size: 32px;
+    flex: 2;
     display: flex;
+    flex-wrap: wrap;
+    gap: 15%;
     justify-content: center;
-    align-items: center;
+    order: 2; /* Visas efter logotypen på desktop */
   }
 
-  .gps-location {
-    width: 100%;
-    text-align: center;
+  #nyckel-footer {
+    transform: translateX(-45px);
   }
-}
+
+  .footer-logo img {
+    max-width: 90%;
+  }
+
+  .approved-logo img {
+    max-width: 70%;
+  }
+
+  .about-box,
+  .hours-box,
+  .contact-box {
+    min-width: 200px;
+  }
+
+  .about-title,
+  .hours-title,
+  .contact-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .about-title::before,
+  .hours-title::before,
+  .contact-title::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ec960d;
+    margin-bottom: 10px;
+  }
+
+  .contact-title::before {
+    width: 50px;
+  }
+
+  .footer ul,
+  .footer p,
+  .footer dl {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #cfcfcf;
+  }
+
+  /* Styles for the new description list for opening hours */
+  .hours-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* Space between rows */
+  }
+
+  .hours-list-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+   .hours-list-item dt {
+     font-weight: bold;
+   }
+  
+   .hours-list-item dd {
+     margin-left: 0;
+     text-align: right;
+   }
+  
+   .footer a {
+     color: #cfcfcf;
+     text-decoration: underline;
+   }
+  
+   .footer-logo a,
+   .social-media-box a {
+     text-decoration: none;
+   }
+  
+   .footer a:hover {
+     color: #fff;
+     text-decoration: none;
+   }
+  
+   .social-media-box {
+     position: relative;
+     top: 40px;
+     margin-top: 0;
+     height: 40px;
+     width: 40px;
+   }
+  
+   .social-media-box .svg-inline-fa {
+     color: #cfcfcf;   /* Sätter färgen */
+     transition: color 0.2s ease-in-out; /* Lägger till en mjuk övergång */
+   }
+
+  .social-media-box a:hover .svg-inline--fa {
+     color: #fff;
+   }
+  
+   /* Add focus styles for all interactive elements (AAA requirement) */
+   .footer a:focus-visible {
+     outline: 3px solid #ec960d;
+     outline-offset: 3px;
+     border-radius: 2px;
+   }
+  
+   @media (max-width: 768px) {
+     .about-box,
+     .contact-box,
+     .hours-box {
+       flex-basis: 100%;
+       width: 100%;
+       height: auto;
+       padding: 16px 0;
+       text-align: center;
+     }
+  
+     /* KORRIGERING: Tog bort 'column-reverse' och order-egenskaper för att matcha DOM-ordningen på mobil. */
+     .footer-container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 100%;
+     }
+  
+     /* "Smurfan" change: Återställ order för logotypen på mobil så den visas sist */
+     .footer-logo {
+       order: 2; /* Visas sist på mobil */
+       display: block;
+       text-align: center;
+       width: 90%;
+       margin: 0 auto;
+       transform: none;
+     }
+  
+     /* "Smurfan" change: Återställ order för info-wrappern på mobil så den visas först */
+     .footer-wrapper {
+       order: 1; /* Visas först på mobil */
+       justify-content: center;
+       text-align: center;
+       gap: 16px;
+       width: 100%;
+     }
+  
+     #nyckel-footer {
+       display: inline-block;
+       margin-top: -10px;
+       max-width: 80%;
+       transform: none;
+     }
+  
+     .approved-logo {
+       display: block;
+       margin: 24px auto 10px 85px;
+       width: 90%;
+       transform: none;
+     }
+  
+     .about-box p,
+     .contact-box li,
+     .hours-box .hours-list-item {
+       font-size: 16px;
+       line-height: 1.7;
+       letter-spacing: 0.03em;
+     }
+  
+     .hours-list-item {
+       flex-direction: column;
+       align-items: center;
+       margin-bottom: 8px;
+     }
+     .hours-list-item dd {
+         text-align: center;
+     }
+  
+     .about-title,
+     .contact-title,
+     .hours-title {
+       font-size: 20px;
+       padding-bottom: 6px;
+       color: #ffffff;
+       font-weight: 700;
+     }
+  
+     /* Fix för orange linje i mobilvy: Individuella regler för ökad specificitet */
+     .about-title::after {
+       content: '';
+       display: block;
+       width: 60%;
+       margin: 8px auto 0;
+       border-bottom: 2px solid #ec960d;
+     }
+     .contact-title::after {
+       content: '';
+       display: block;
+       width: 60%;
+       margin: 8px auto 0;
+       border-bottom: 2px solid #ec960d;
+     }
+     .hours-title::after {
+       content: '';
+       display: block;
+       width: 60%;
+       margin: 8px auto 0;
+       border-bottom: 2px solid #ec960d;
+     }
+  
+     .about-title::before,
+     .contact-title::before,
+     .hours-title::before {
+       display: none !important;
+     }
+  
+     .social-media-box {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       margin-top: 15px;
+       margin-bottom: 25px;
+     }
+  
+     .social-media-box > a > div {
+       width: 48px;
+       height: 48px;
+       font-size: 32px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+  
+     .gps-location {
+       width: 100%;
+       text-align: center;
+     }
+   }
