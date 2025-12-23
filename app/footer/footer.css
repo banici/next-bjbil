@@ -3,26 +3,25 @@
    background-color: #1A1E24;
    height: auto;
    width: 100%;
-   padding: 2.5rem 0; /* 40px -> 2.5rem */
+   padding: 2.5rem 0;
    position: relative;
  }
 
  .footer-container {
    display: flex;
    flex-wrap: wrap;
-   margin-top: 3.125rem; /* 50px -> 3.125rem */
+   margin-top: 3.125rem;
    justify-content: center;
-   gap: 1.5rem; /* 24px -> 1.5rem */
+   gap: 1.5rem;
  }
 
- /* "Smurfan" change: Använd order för att placera logotypen först på desktop */
  .footer-logo {
    flex: 1;
-   max-width: 29.375rem; /* 470px -> 29.375rem */
+   max-width: 29.375rem;
    text-align: center;
-   margin-left: 6.25rem; /* 100px -> 6.25rem */
-   transform: translateY(-3.4375rem); /* -55px -> -3.4375rem */
-   order: 1; /* Visas först på desktop */
+   margin-left: 6.25rem;
+   transform: translateY(-3.4375rem);
+   order: 1;
  }
 
  .footer-wrapper {
@@ -31,11 +30,11 @@
    flex-wrap: wrap;
    gap: 15%;
    justify-content: center;
-   order: 2; /* Visas efter logotypen på desktop */
+   order: 2;
  }
 
  #nyckel-footer {
-   transform: translateX(-2.8125rem); /* -45px -> -2.8125rem */
+   transform: translateX(-2.8125rem);
  }
 
  .footer-logo img {
@@ -49,14 +48,14 @@
  .about-box,
  .hours-box,
  .contact-box {
-   min-width: 12.5rem; /* 200px -> 12.5rem */
+   min-width: 12.5rem;
  }
 
  .about-title,
  .hours-title,
  .contact-title {
-   font-size: 1.375rem; /* 22px -> 1.375rem */
-   margin-bottom: 0.625rem; /* 10px -> 0.625rem */
+   font-size: 1.375rem;
+   margin-bottom: 0.625rem;
    position: relative;
  }
 
@@ -65,37 +64,36 @@
  .contact-title::before {
    content: "";
    display: block;
-   width: 5rem; /* 80px -> 5rem */
-   height: 0.1875rem; /* 3px -> 0.1875rem */
+   width: 5rem;
+   height: 0.1875rem;
    background: #ec960d;
-   margin-bottom: 0.625rem; /* 10px -> 0.625rem */
+   margin-bottom: 0.625rem;
  }
 
  .contact-title::before {
-   width: 3.125rem; /* 50px -> 3.125rem */
+   width: 3.125rem;
  }
 
  .footer ul,
  .footer p,
  .footer dl {
-   font-size: 1.125rem; /* 18px -> 1.125rem */
+   font-size: 1.125rem;
    line-height: 1.8;
    color: #cfcfcf;
  }
 
- /* Styles for the new description list for opening hours */
  .hours-list {
    padding: 0;
    margin: 0;
    display: flex;
    flex-direction: column;
-   gap: 0.5em; /* Already relative */
+   gap: 0.5em;
  }
 
  .hours-list-item {
    display: flex;
    justify-content: space-between;
-   gap: 1em; /* Already relative */
+   gap: 1em;
  }
   
    .hours-list-item dt {
@@ -135,33 +133,31 @@
   
    .social-media-box .svg-inline--fa {
      width: 3rem;
-     color: #cfcfcf;   /* Sätter färgen */
-     transition: color 0.2s ease-in-out; /* Lägger till en mjuk övergång */
+     color: #cfcfcf; 
+     transition: color 0.2s ease-in-out;
    }
   
    .social-media-box a:hover .svg-inline--fa {
      color: #fff;
    }
   
-   /* Add focus styles for all interactive elements (AAA requirement) */
    .footer a:focus-visible {
-     outline: 0.1875rem solid #ec960d; /* 3px -> 0.1875rem */
-     outline-offset: 0.1875rem; /* 3px -> 0.1875rem */
-     border-radius: 2px; /* 2px -> 0.125rem */
+     outline: 0.1875rem solid #ec960d;
+     outline-offset: 0.1875rem;
+     border-radius: 2px;
    }
   
-   @media (max-width: 48rem) { /* 768px -> 48rem */
+   @media (max-width: 48rem) {
      .about-box,
      .contact-box,
      .hours-box {
        flex-basis: 100%;
        width: 100%;
        height: auto;
-       padding: 1rem 0; /* 16px -> 1rem */
+       padding: 1rem 0;
        text-align: center;
      }
   
-     /* KORRIGERING: Tog bort 'column-reverse' och order-egenskaper för att matcha DOM-ordningen på mobil. */
      .footer-container {
        display: flex;
        flex-direction: column;
@@ -169,9 +165,8 @@
        width: 100%;
      }
   
-     /* "Smurfan" change: Återställ order för logotypen på mobil så den visas sist */
      .footer-logo {
-       order: 2; /* Visas sist på mobil */
+       order: 2;
        display: block;
        text-align: center;
        width: 90%;
@@ -179,25 +174,24 @@
        transform: none;
      }
   
-     /* "Smurfan" change: Återställ order för info-wrappern på mobil så den visas först */
      .footer-wrapper {
-       order: 1; /* Visas först på mobil */
+       order: 1;
        justify-content: center;
        text-align: center;
-       gap: 1rem; /* 16px -> 1rem */
+       gap: 1rem; 
        width: 100%;
      }
   
      #nyckel-footer {
        display: inline-block;
-       margin-top: 2.925rem; /* -10px -> -0.625rem */
+       margin-top: 2.925rem;
        max-width: 80%;
        transform: none;
      }
   
      .approved-logo {
        display: block;
-       margin: 1.5rem auto 0.625rem 5.3125rem; /* 24px -> 1.5rem, 10px -> 0.625rem, 85px -> 5.3125rem */
+       margin: 1.5rem auto 0.625rem 5.3125rem;
        width: 90%;
        transform: none;
      }
@@ -205,7 +199,7 @@
      .about-box p,
      .contact-box li,
      .hours-box .hours-list-item {
-       font-size: 1rem; /* 16px -> 1rem */
+       font-size: 1rem;
        line-height: 1.7;
        letter-spacing: 0.03em;
      }
@@ -213,7 +207,7 @@
      .hours-list-item {
        flex-direction: column;
        align-items: center;
-       margin-bottom: 0.5rem; /* 8px -> 0.5rem */
+       margin-bottom: 0.5rem;
      }
      .hours-list-item dd {
          text-align: center;
@@ -222,33 +216,33 @@
      .about-title,
      .contact-title,
      .hours-title {
-       font-size: 1.25rem; /* 20px -> 1.25rem */
-       padding-bottom: 0.375rem; /* 6px -> 0.375rem */
+       font-size: 1.25rem;
+       padding-bottom: 0.375rem;
        color: #ffffff;
        font-weight: 700;
      }
   
-     /* Fix för orange linje i mobilvy: Individuella regler för ökad specificitet */
+     
      .about-title::after {
        content: '';
        display: block;
        width: 60%;
-       margin: 0.5rem auto 0; /* 8px -> 0.5rem */
-       border-bottom: 0.125rem solid #ec960d; /* 2px -> 0.125rem */
+       margin: 0.5rem auto 0;
+       border-bottom: 0.125rem solid #ec960d;
      }
      .contact-title::after {
        content: '';
        display: block;
        width: 60%;
-       margin: 0.5rem auto 0; /* 8px -> 0.5rem */
-       border-bottom: 0.125rem solid #ec960d; /* 2px -> 0.125rem */
+       margin: 0.5rem auto 0;
+       border-bottom: 0.125rem solid #ec960d; 
      }
      .hours-title::after {
        content: '';
        display: block;
        width: 60%;
-       margin: 0.5rem auto 0; /* 8px -> 0.5rem */
-       border-bottom: 0.125rem solid #ec960d; /* 2px -> 0.125rem */
+       margin: 0.5rem auto 0;
+       border-bottom: 0.125rem solid #ec960d;
      }
   
      .about-title::before,
