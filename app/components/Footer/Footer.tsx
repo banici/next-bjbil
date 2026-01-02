@@ -92,14 +92,13 @@ export default function Footer() {
             />
           </a>
 
-          <div className="approved-logo">
-            <a href="/" aria-label="Godkänd bilverkstad – åter till startsidan">
-              <img
-                src="/images/godkand-bilverkstad.jpg"
-                alt="Godkänd bilverkstad"
-              />
-            </a>
-          </div>
+          <a href="/" aria-label="Godkänd bilverkstad – åter till startsidan">
+            <img
+              src="/images/godkand-bilverkstad.jpg"
+              id="approved-logo"
+              alt="Godkänd bilverkstad"
+            />
+          </a>
         </div>
       </div>
     </footer>

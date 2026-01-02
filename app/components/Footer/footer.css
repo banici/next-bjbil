@@ -22,6 +22,7 @@
   margin-left: 6.25rem;
   transform: translateY(-3.4375rem);
   order: 1;
+  display: block;
 }
 
 .footer-wrapper {
@@ -33,15 +34,11 @@
   order: 2;
 }
 
-#nyckel-footer {
-  transform: translateX(-2.8125rem);
-}
-
 .footer-logo img {
-  max-width: 90%;
+  max-width: 80%;
 }
 
-.approved-logo img {
+#approved-logo img {
   max-width: 70%;
 }
 
@@ -190,10 +187,10 @@
     transform: none;
   }
 
-  .approved-logo {
-    display: block;
-    margin: 1.5rem auto 0.625rem 5.3125rem;
-    width: 90%;
+  #approved-logo {
+    display: inline-block;
+    margin-top: 1.5rem;
+    max-width: 70%;
     transform: none;
   }
 
