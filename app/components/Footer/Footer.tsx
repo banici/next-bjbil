@@ -5,7 +5,7 @@ import "./footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer" role="contentinfo">
+    <footer className="footer">
       <div className="footer-container">
         <div className="footer-wrapper">
           <section className="about-box" aria-labelledby="footer-about-title">
@@ -13,23 +13,24 @@ export default function Footer() {
               Bo & Jimmy Bilservice AB
             </h4>
 
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal"
-              aria-label="Öppna adress i Google Maps"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className="gps-location">
-                Aminogatan 15E
+            <address>  {/* Semantiskt korrekt för kontaktinfo */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="visually-hidden">Adress: </span>
+                Aminogatan 15E,
                 <br />
                 431 53 Mölndal
-              </p>
-            </a>
+                <span className="visually-hidden"> (öppnas i Google Maps i nytt fönster)</span>
+              </a>
+            </address>
           </section>
 
           <section className="hours-box" aria-labelledby="footer-hours-title">
             <h4 id="footer-hours-title" className="hours-title">
-              Våra öppettider
+              Öppettider
             </h4>
             <dl className="hours-list">
               <div className="hours-list-item">
@@ -51,52 +52,65 @@ export default function Footer() {
             </dl>
           </section>
 
-          <section
-            className="contact-box"
-            aria-labelledby="footer-contact-title"
-          >
+          <section className="contact-box" aria-labelledby="footer-contact-title">
             <h4 id="footer-contact-title" className="contact-title">
               Kontakt
             </h4>
-            <ul>
+            <ul role="list">
               <li>
-                <a href="tel:031847529">Ring oss</a>
+                <a href="tel:031847529">
+                  <span className="visually-hidden">Telefon: </span>
+                  031-84 75 29
+                </a>
               </li>
               <li>
-                <a href="mailto:bayerische@telia.com">Maila oss</a>
+                <a href="mailto:bayerische@telia.com">
+                  <span className="visually-hidden">E-post: </span>
+                  bayerische@telia.com
+                </a>
               </li>
             </ul>
 
-            <div className="social-media-box">
-              <a
-                target="_blank"
-                href="https://www.instagram.com/bojimmybilservice/"
-                aria-label="Instagram — öppnas i nytt fönster"
-                rel="noopener noreferrer"
-                title="Instagram"
-              >
-                <div>
-                  <FontAwesomeIcon icon={faInstagram} />
-                </div>
-              </a>
-            </div>
+            <ul className="social-media-box" role="list" aria-label="Sociala medier">
+              <li>
+                <a
+                  href="https://www.instagram.com/bojimmybilservice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Följ oss på Instagram (öppnas i nytt fönster)"
+                >
+                  <FontAwesomeIcon icon={faInstagram} aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
           </section>
         </div>
 
         <div className="footer-logo">
-          <a href="/" aria-label="Startsida">
+          <a href="/" aria-label="Till startsidan">
             <img
               src="/images/boJimmyLoggaSVG.svg"
               id="nyckel-footer"
-              alt="Bo & Jimmy Bilservice — företagslogotyp"
+              alt="Bo & Jimmy Bilservice logotyp"
+              width="300"   
+              height="100"  
+              loading="lazy"
             />
           </a>
 
-          <a href="/" aria-label="Godkänd bilverkstad – åter till startsidan">
+          <a 
+            href="https://www.motormagasinet.se/godkand-bilverkstad"  
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Läs mer om Godkänd Bilverkstad (öppnas i nytt fönster)"
+          >
             <img
               src="/images/godkand-bilverkstad.jpg"
               id="approved-logo"
-              alt="Godkänd bilverkstad"
+              alt="Certifierad som Godkänd Bilverkstad"
+              width="150"
+              height="150"
+              loading="lazy"
             />
           </a>
         </div>
