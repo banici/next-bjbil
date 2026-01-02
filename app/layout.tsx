@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "./footer/Footer";
+import Footer from "./components/Footer/Footer";
+import HeaderTopBar from "./components/HeaderTopBar/HeaderTopBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,7 @@ export default function RootLayout({
         >
           Hoppa till huvudinnehåll
         </a>
-
+        <HeaderTopBar />
         <header role="banner" className="p-4 border-b">
           <nav aria-label="Huvudmeny">
             <ul className="flex gap-4">
