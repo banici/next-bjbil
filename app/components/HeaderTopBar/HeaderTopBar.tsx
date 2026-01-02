@@ -67,7 +67,7 @@ export default function HeaderTopBar() {
           id="mobile-contact-info"
           className={`mobile-content ${isExpanded ? 'expanded' : ''}`}
           role="region"
-          aria-labelledby="Kontaktinformation"
+          aria-label="Kontaktinformation"
         >
             <div className="mobile-content-inner">
               <ul className="mobile-list" role="list">
