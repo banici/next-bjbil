@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer/Footer";
-import HeaderTopBar from "./components/HeaderTopBar/HeaderTopBar";
+import HeaderWrapper from "./components/Header/HeaderWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,44 +29,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv">
-      <body className="antialiased">
-        {/* Hoppa till innehållet – AAA requirement */}
-        <a
-          href="#content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 
-                 bg-white text-black border p-2 rounded"
-        >
-          Hoppa till huvudinnehåll
-        </a>
-        <HeaderTopBar />
-        <header role="banner" className="p-4 border-b">
-          <nav aria-label="Huvudmeny">
-            <ul className="flex gap-4">
-              <li>
-                <a href="/">Hem</a>
-              </li>
-              <li>
-                <a href="/om-oss">Om oss</a>
-              </li>
-              <li>
-                <a href="/tjanster">Tjänster</a>
-              </li>
-              <li>
-                <a href="/kontakta-oss">Kontakt</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-
-        <main
-          id="content"
-          role="main"
-          tabIndex={-1}
-          className="p-6 min-h-screen"
-        >
+      <body>
+        <HeaderWrapper />
+        <main id="main-content">
           {children}
         </main>
-
         <Footer />
       </body>
     </html>
