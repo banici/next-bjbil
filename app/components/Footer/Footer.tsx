@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 import "./footer.css";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,7 +16,7 @@ export default function Footer() {
             </h4>
 
             <address>  {/* Semantiskt korrekt för kontaktinfo */}
-              <a
+              <Link
                 href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -24,7 +26,7 @@ export default function Footer() {
                 <br />
                 431 53 Mölndal
                 <span className="visually-hidden"> (öppnas i Google Maps i nytt fönster)</span>
-              </a>
+              </Link>
             </address>
           </section>
 
@@ -58,47 +60,47 @@ export default function Footer() {
             </h4>
             <ul role="list">
               <li>
-                <a href="tel:031847529">
+                <Link href="tel:031847529">
                   <span className="visually-hidden">Telefon: </span>
                   031-84 75 29
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="mailto:bayerische@telia.com">
+                <Link href="mailto:bayerische@telia.com">
                   <span className="visually-hidden">E-post: </span>
                   bayerische@telia.com
-                </a>
+                </Link>
               </li>
             </ul>
 
             <ul className="social-media-box" role="list" aria-label="Sociala medier">
               <li>
-                <a
+                <Link
                   href="https://www.instagram.com/bojimmybilservice/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Följ oss på Instagram (öppnas i nytt fönster)"
                 >
                   <FontAwesomeIcon icon={faInstagram} aria-hidden="true" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://www.youtube.com/@bojimmybilservice/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Följ oss på Youtube (öppnas i nytt fönster)"
                 >
                   <FontAwesomeIcon icon={faYoutube} aria-hidden="true" />
-                </a>
+                </Link>
               </li>
             </ul>
           </section>
         </div>
 
         <div className="footer-logo">
-          <a href="/" aria-label="Till startsidan">
-            <img
+          <Link href="/" id="nyckel-link" aria-label="Till startsidan">
+            <Image
               src="/images/boJimmyLoggaSVG.svg"
               id="nyckel-footer"
               alt="Bo & Jimmy Bilservice logotyp"
@@ -106,15 +108,15 @@ export default function Footer() {
               height="100"  
               loading="lazy"
             />
-          </a>
+          </Link>
 
-          <a 
+          <Link
             href="https://www.motormagasinet.se/godkand-bilverkstad"  
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Läs mer om Godkänd Bilverkstad (öppnas i nytt fönster)"
           >
-            <img
+            <Image
               src="/images/godkand-bilverkstad.jpg"
               id="approved-logo"
               alt="Certifierad som Godkänd Bilverkstad"
@@ -122,7 +124,7 @@ export default function Footer() {
               height="150"
               loading="lazy"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
