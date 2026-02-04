@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 import "./footer.css";
 
@@ -80,6 +80,16 @@ export default function Footer() {
                   aria-label="Följ oss på Instagram (öppnas i nytt fönster)"
                 >
                   <FontAwesomeIcon icon={faInstagram} aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@bojimmybilservice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Följ oss på Youtube (öppnas i nytt fönster)"
+                >
+                  <FontAwesomeIcon icon={faYoutube} aria-hidden="true" />
                 </a>
               </li>
             </ul>
