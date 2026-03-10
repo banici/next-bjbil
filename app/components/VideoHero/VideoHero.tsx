@@ -9,7 +9,7 @@ export default function VideoHero() {
   
   useEffect(() => {
     // Dynamic word animation
-    const words = ['BMW', 'MINI', 'TESLA', 'Audi', 'VW'];
+    const words = ['BMW', 'MINI', 'TESLA', 'VAG'];
     let index = 0;
     
     const interval = setInterval(() => {
@@ -45,7 +45,7 @@ export default function VideoHero() {
         autoPlay
         playsInline
         loop
-        preload="auto"
+        preload="metadata"
         aria-label="Introduktionsvideo som visar vår verkstad och tjänster"
       >
         <source src="/videos/indexIntro.MP4" type="video/mp4" />

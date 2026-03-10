@@ -122,10 +122,10 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
             <nav className="navigation" aria-label="Huvudnavigering">
               <ul className="nav sf-menu" role="list">
                 <li>
-                  <a href="/">Hem</a>
+                  <a href="/" aria-current="page">Hem</a>
                 </li>
                 <li>
-                  <a href="/bilmarken" aria-current="page">Våra bilmärken</a>
+                  <a href="/bilmarken">Våra bilmärken</a>
                 </li>
                 <li>
                   <a href="/tjanster">Våra tjänster</a>
