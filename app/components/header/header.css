@@ -72,9 +72,9 @@
 
 .header-logo-wrapper .container {
   padding-top: 1.875rem;
-  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
+  margin: auto;
 }
 
 /* ===== DESKTOP NAVIGATION ===== */
