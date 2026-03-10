@@ -1,0 +1,121 @@
+.presentation-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 700px;
+}
+
+.presentation-img,
+.description-wrapper {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.presentation-img {
+  position: relative;
+}
+
+.presentation-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tag-container {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.tag-box {
+  background-color: var(--bjbil-orange);
+  padding: 0.5rem 1.5rem;
+  white-space: nowrap;
+}
+
+.tag-box h2 {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.description-wrapper {
+  background-color: #bebebe;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7rem;
+}
+
+.description-title {
+  font-family: 'Nunito Sans';
+  color: #000;
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+#title-line {
+  width: 70px;
+  height: 5px;
+  background-color: var(--bjbil-orange);
+  margin-bottom: 20px;
+}
+
+.description-box {
+  width: 90%;
+}
+
+.description-box p {
+  font-size: 20px;
+  letter-spacing: .07em;
+  line-height: 2.5rem;
+  font-weight: 600;
+  font-family: 'Nunito Sans';
+  color: #000;
+}
+
+/* Desktop — reverse swaps image and description */
+@media (min-width: 48rem) {
+  .presentation-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Mobile — image always on top regardless of reverse */
+@media (max-width: 48rem) {
+  .presentation-container {
+    flex-direction: column;
+    height: auto; /* remove fixed 700px height on mobile */
+  }
+
+  .presentation-img {
+    order: 1;
+    width: 100%;
+    height: 20rem; /* fixed height since fill needs something to expand into */
+  }
+
+  .description-wrapper {
+    order: 2;
+    width: 100%;
+    padding: 2rem 1.5rem; /* reduce the 7rem desktop padding */
+  }
+
+  .description-title {
+    font-size: 1.75rem;
+  }
+
+  .description-box p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+
+  .tag-box h2 {
+    font-size: 1.25rem;
+  }
+}

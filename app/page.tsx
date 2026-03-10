@@ -2,6 +2,7 @@ import VideoHero from './components/VideoHero/VideoHero';
 import Image from 'next/image';
 import Link from 'next/link';
 import './page.css';
+import PresentationBoxes from './components/PresentationBoxes/PresentationBoxes';
 
 export default function HomePage() {
   return (
@@ -64,45 +65,19 @@ export default function HomePage() {
         </div>
         <hr className="transparent" />
       </section>
-
+      <PresentationBoxes
+        boxInfo={{
+          titleQuote: "Smarta lösningar för din bil",
+          tagDescription: "INNOVATIVA",
+          boxPresentation: "Vi strävar ständigt efter att hitta nya och smartare lösningar för våra kunder. Med hjälp av modern teknik och avancerad diagnostikutrustning kan vi snabbt identifiera och lösa problem på ett effektivt sätt. Vår nyfikenhet och vilja att utvecklas gör att vi alltid ligger steget före – för att din bil ska få bästa service, varje gång.",
+          imgSrc: "/images/innovativ.jpg",
+          imgAlt: "Innovativ bilverkstad med modern utrustning"
+        }}
+      />
       {/* Innovation Section */}
       <section className="first-page-section">
-        <div className="presentation-container">
+        <div className="presentation-containerr">
           <div className="presentation-wrapper">
-            {/* Innovativa */}
-            <div className="innovation-img">
-              <Image 
-                src="/images/innovativ.jpg" 
-                alt="Innovativ bilverkstad med modern utrustning"
-                width={600}
-                height={400}
-                loading="lazy"
-              />
-              <div className="inno-container">
-                <div className="inno-box">
-                  <h2>INNOVATIVA</h2>
-                </div>
-              </div>
-            </div>
-
-            <div className="innovation-container">
-              <div className="innovation-wrapper">
-                <h3 className="post-title">
-                  <strong><br />Smarta lösningar för din bil</strong>
-                </h3>
-                <div id="title-line" aria-hidden="true"></div>
-                <div className="post-excerpt">
-                  <p>
-                    Vi strävar ständigt efter att hitta nya och smartare lösningar för våra kunder.
-                    Med hjälp av modern teknik och avancerad diagnostikutrustning kan vi snabbt 
-                    identifiera och lösa problem på ett effektivt sätt. Vår nyfikenhet och vilja 
-                    att utvecklas gör att vi alltid ligger steget före – för att din bil ska få 
-                    bästa service, varje gång.
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Arbetseffektiva */}
             <div className="effect-wrapper">
               <h3 className="post-title">
