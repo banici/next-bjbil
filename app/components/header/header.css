@@ -15,9 +15,29 @@
   width: 100%;
 }
 
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bjbil-blue);
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 12.5rem;
+  background-color: var(--bjbil-blue);
+}
+
 .header-wrapper {
-  position: relative;
-  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+.header-collapsed .header-wrapper {
+  transform: translateY(-0.5%);
 }
 
 .header-wrapper .container {
@@ -213,7 +233,7 @@
   left: 0;
   width: 16rem;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.97);
+  background-color: rgba(0, 0, 0, 0.87);
   z-index: 15;
   transform: translateX(-100%);
   transition: transform var(--animation-timing);
@@ -232,6 +252,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-top: 3.43rem;
 }
 
 .nav-list li {
@@ -295,14 +316,18 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 62rem) {
   .mobile-navigator {
-    display: block;
+    display: flex;
+    align-items: center; /* centers hamburger vertically */
     width: 100%;
-    height: 6.25rem;
+    height: 100%;
     position: absolute;
   }
 
   .navigator-menu {
-    display: flex;
+    position: static; /* remove absolute positioning */
+    top: unset;
+    left: unset;
+    margin-left: 0.625rem; /* keep the left spacing */
   }
 
   .nav-sidebar {
@@ -316,10 +341,13 @@
   .header {
     height: 6.25rem;
     box-shadow: 0 0.55rem 1.5rem rgba(0, 0, 10, 0.9);
+    display: flex;
+    align-items: center; /* vertically centers children */
   }
 
   #header-logo {
     justify-content: flex-end;
+    margin-left: 7.5rem;
   }
 
   #header-logo img {
@@ -328,12 +356,23 @@
   }
 
   .header-wrapper .container {
-    padding-top: 0rem;
+    padding-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
   }
 
   .header-wrapper {
-    overflow: visible;
+    width: 100%;
+    display: flex;
+    align-items: center; /* vertically centers logo */
+    height: 100%;
+  }
+
+  .header-logo-wrapper .container {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .header-logo-wrapper {

@@ -1,33 +1,26 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 
 export function useScrollDirection() {
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
-  const [isAtTop, setIsAtTop] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const threshold = 10;
+    const collapseAt = 90;
+    const expandAt = 100;
 
-    const updateScrollDirection = () => {
+    const updateScroll = () => {
       const scrollY = window.scrollY;
-      const difference = Math.abs(scrollY - lastScrollY);
 
-      if (difference < threshold) return;
-
-      const direction = scrollY > lastScrollY ? 'down' : 'up';
-      setScrollDirection(direction);
-      setIsAtTop(scrollY < 50);
-      lastScrollY = scrollY;
+      if (scrollY > collapseAt) {
+        setIsCollapsed(true);
+      } else if (scrollY < expandAt) {
+        setIsCollapsed(false);
+      }
     };
 
-    window.addEventListener('scroll', updateScrollDirection);
-
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection);
-    };
+    window.addEventListener('scroll', updateScroll);
+    return () => window.removeEventListener('scroll', updateScroll);
   }, []);
 
-  return { scrollDirection, isAtTop };
+  return { isCollapsed };
 }

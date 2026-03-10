@@ -1,0 +1,214 @@
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 21.875rem;
+  max-height: 59.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Intro Text Overlay */
+.intro-box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  text-align: center;
+  z-index: 2;
+  width: 90%;
+  max-width: 75rem;
+  padding: 0 1rem;
+}
+
+#dynamic-sentence {
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.7); 
+}
+
+#last-word {
+  color: #fff;
+  font-size: clamp(2.5rem, 7vw, 5.625rem);
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  display: block;
+  margin-top: 0.5rem;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.7);
+}
+
+/* Mobile Styles */
+@media (max-width: 61.9375rem) {
+  .video-container {
+    height: clamp(25rem, 50vh, 28.125rem);
+    max-height: 28.125rem;
+  }
+  
+  /* Fallback image for mobile if video doesn't load */
+  .video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/fallback-img-lift.jpeg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+  }
+  
+  .intro-box {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 1.25rem;
+  }
+  
+  #dynamic-sentence {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+  
+  #last-word {
+    font-size: clamp(2rem, 7vw, 4.375rem);
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 48rem) {
+  .video-container {
+    height: clamp(22.5rem, 45vh, 25rem);
+  }
+}
+
+/* Small mobile */
+@media (max-width: 30rem) {
+  .video-container {
+    height: clamp(20rem, 40vh, 21.875rem);
+  }
+  
+  .intro-box {
+    padding: 0 1rem;
+  }
+  
+  #dynamic-sentence {
+    font-size: 1.5rem;
+  }
+  
+  #last-word {
+    font-size: 2rem;
+  }
+}
+
+/* Landscape mobile - prevent overly tall videos */
+@media (max-height: 30rem) and (orientation: landscape) {
+  .video-container {
+    height: 90vh;
+    min-height: 18.75rem;
+  }
+  
+  .intro-box {
+    top: 45%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 20rem) {
+  .intro-box {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+  
+  #dynamic-sentence {
+    font-size: 1.25rem;
+  }
+  
+  #last-word {
+    font-size: 1.75rem;
+    margin-top: 0.25rem;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .video-container video {
+    animation: none;
+  }
+  
+  #last-word {
+    animation: none;
+    transition: none;
+  }
+  
+  .video-container video {
+    display: none;
+  }
+  
+  .video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/fallback-img-lift.jpeg') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  #dynamic-sentence,
+  #last-word {
+    text-shadow: 0.1875rem 0.1875rem 0.375rem rgba(0, 0, 0, 1);
+    font-weight: 900;
+  }
+  
+  .video-container::before {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Focus visible for any interactive elements inside */
+.video-container a:focus-visible,
+.video-container button:focus-visible {
+  outline: 0.1875rem solid #fff;
+  outline-offset: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+/* Print styles - don't print video */
+@media print {
+  .video-container video {
+    display: none;
+  }
+  
+  .video-container {
+    height: 25rem;
+    background: #fff;
+  }
+  
+  #dynamic-sentence,
+  #last-word {
+    color: #000;
+    text-shadow: none;
+  }
+}

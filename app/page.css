@@ -1,0 +1,42 @@
+/* Hero Section Wrapper */
+.page-section.slider {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.page-section.slider .container.full-width {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.main-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 61.9375rem) {
+  .main-slider {
+    height: clamp(21.875rem, 50vh, 28.125rem);
+  }
+  
+  .content-area {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  .main-slider {
+    min-height: 20rem;
+  }
+}
+
+@media (max-height: 30rem) and (orientation: landscape) {
+  .main-slider {
+    height: 90vh;
+    min-height: 18.75rem;
+  }
+}
