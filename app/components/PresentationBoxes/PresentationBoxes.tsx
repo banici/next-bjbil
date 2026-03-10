@@ -25,6 +25,7 @@ export default function PresentationBoxes({ boxInfo, reverse = false}: BoxProps)
                 alt={imgAlt}
                 fill
                 loading="lazy"
+                sizes="(max-width: 48rem) 100vw, 50vw"
                 />
                 <div className="tag-container">
                     <div className="tag-box">
