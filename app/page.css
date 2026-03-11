@@ -1,4 +1,9 @@
 /* Hero Section Wrapper */
+#page-section {
+  position: relative;
+  background-color: #dadada;
+}
+
 .page-section.slider {
   padding: 0;
   margin: 0;
@@ -17,6 +22,59 @@
   width: 100%;
   overflow: hidden;
 }
+
+.index-welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+#index-welcome-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 0 20px 0;
+}
+
+#index-welcome-title > h1 {
+  color: black;
+  background-color: rgb(228, 190, 67);
+  width: 280px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-size: 40px;
+}
+
+#index-title-name {
+  font-family: 'Inter';
+  font-size: 85px;
+  font-weight: 700;
+  color: black;
+}
+
+#main-title-undertext {
+  padding: 30px 0 70px 0;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Nunito Sans';
+}
+
+#index-intro-description {
+  font-family: 'Inter';
+  font-weight: 400;
+  width: 70%;
+  max-width: 79rem;
+  font-size: 21px;
+  line-height: 2.5rem;
+  padding-bottom: 3.5rem;
+}
+
 
 @media (max-width: 61.9375rem) {
   .main-slider {

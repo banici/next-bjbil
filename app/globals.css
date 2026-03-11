@@ -16,6 +16,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Reset Tailwind's heading styles globally */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: revert;
+    font-weight: revert;
+    color: revert;
+  }
+}
+
 .header-container {
   position: fixed;
   top: 0;

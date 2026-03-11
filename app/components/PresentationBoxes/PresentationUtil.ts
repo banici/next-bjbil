@@ -13,7 +13,8 @@ export const presentationBoxes = [
     boxPresentation: "Genom åren har vi kontinuerligt utökat vårt lager av reservdelar, vilket gör att vi har det mesta på plats – särskilt till BMW. Vi håller oss alltid uppdaterade med den senaste tekniken inom diagnostik och specialverktyg för att kunna arbeta så effektivt som möjligt. Med fokus på kvalitet, noggrannhet och effektivitet kan vi erbjuda god service varje gång.",
     imgSrc: "/images/arbetseffektiv.jpg",
     imgAlt: "Effektiv bilservice med precision",
-    reverse: true
+    reverse: true,
+    mirrorImage: true
   },
   {
     titleQuote: "Personlig service – hela vägen",

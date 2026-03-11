@@ -10,10 +10,11 @@ interface BoxProps {
         imgAlt: string;
     }
     reverse?: boolean;
+    mirrorImage?: boolean;
 }
 
 
-export default function PresentationBoxes({ boxInfo, reverse = false}: BoxProps) {
+export default function PresentationBoxes({ boxInfo, reverse = false, mirrorImage = false }: BoxProps) {
     const { titleQuote, tagDescription, boxPresentation, imgSrc, imgAlt } = boxInfo;
 
   return (
@@ -26,6 +27,7 @@ export default function PresentationBoxes({ boxInfo, reverse = false}: BoxProps)
                 fill
                 loading="lazy"
                 sizes="(max-width: 48rem) 100vw, 50vw"
+                className={mirrorImage ? 'img-mirrored' : ''}
                 />
                 <div className="tag-container">
                     <div className="tag-box">

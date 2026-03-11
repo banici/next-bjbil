@@ -4,6 +4,7 @@ import Link from 'next/link';
 import './page.css';
 import PresentationBoxes from './components/PresentationBoxes/PresentationBoxes';
 import { presentationBoxes } from './components/PresentationBoxes/PresentationUtil';
+import StickyDack from './components/StickyDack/StickyDack';
 
 export default function HomePage() {
   return (
@@ -15,67 +16,47 @@ export default function HomePage() {
             <VideoHero />
           </div>
         </div>
-        <hr className="transparent" />
       </section>
 
       {/* Welcome Section */}
       <section className="page-section" id="page-section">
-        <div className="sticky-dack">
-          <Link href="/dack-hotell">
-            <Image 
-              src="/icons/dack-hotell.png" 
-              alt="Däckhotell - Säker förvaring av dina däck"
-              width={120}
-              height={120}
-            />
-          </Link>
-        </div>
-
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="thumbnail no-border no-padding thumbnail-banner">
-                <div id="welcome-to-title">
-                  <h1>Välkommen till</h1>
-                </div>
-                <h2 id="index-title-name" className="text-center">
-                  Bo & Jimmy
-                </h2>
-                <h2 id="index-title-name" className="text-center">
-                  Bilservice AB
-                </h2>
-                <br />
-                <p id="main-title-undertext">
-                  Vi har servat bilar i över 40 år - med kvalitet, erfarenhet och omtanke.
-                </p>
-                <br />
-                <br />
-                <p id="intro-description-index">
-                  Bo & Jimmy's Bilservice är en specialiserad bilverkstad med över 40 års 
-                  erfarenhet av service och reparationer, inriktade på BMW, MINI, TESLA och VAG. 
-                  Vi erbjuder ett brett utbud av tjänster, inklusive service och reparation av bilar, 
-                  styling och tuning för att optimera prestanda, samt däckhotell för att säkra däck 
-                  under säsongsbyte. Dessutom har vi en omfattande reservdelsförsäljning med ett stort 
-                  lager av både nya och begagnade delar, inklusive tillbehör för trimning och styling. 
-                  Vårt fokus på kvalitet och kundnöjdhet gör oss till det självklara valet för bilägare 
-                  som söker expertis och pålitlighet. Besök oss i Mölndal för att uppleva skillnaden!
-                </p>
-              </div>
+        <StickyDack />
+          <div className="index-welcome-container">
+            <div id="index-welcome-title">
+              <h1>Välkommen till</h1>
             </div>
+            <h2 id="index-title-name">
+              Bo & Jimmy
+            </h2>
+            <h2 id="index-title-name">
+              Bilservice AB
+            </h2>
+            <p id="main-title-undertext">
+              Vi har servat bilar i över 40 år - med kvalitet, erfarenhet och omtanke.
+            </p>
+            <br />
+            <br />
+            <p id="index-intro-description">
+              Bo & Jimmy's Bilservice är en specialiserad bilverkstad med över 40 års 
+              erfarenhet av service och reparationer, inriktade på BMW, MINI, TESLA och VAG. 
+              Vi erbjuder ett brett utbud av tjänster, inklusive service och reparation av bilar, 
+              styling och tuning för att optimera prestanda, samt däckhotell för att säkra däck 
+              under säsongsbyte. Dessutom har vi en omfattande reservdelsförsäljning med ett stort 
+              lager av både nya och begagnade delar, inklusive tillbehör för trimning och styling. 
+              Vårt fokus på kvalitet och kundnöjdhet gör oss till det självklara valet för bilägare 
+              som söker expertis och pålitlighet. Besök oss i Mölndal för att uppleva skillnaden!
+            </p>
           </div>
-        </div>
-        <hr className="transparent" />
       </section>
       {presentationBoxes.map((box, index) => (
         <PresentationBoxes
           key={index}
           boxInfo={box}
           reverse={box.reverse}
+          mirrorImage={box.mirrorImage}
         />
       ))}
                
-      <hr className="transparent" />
-
       {/* Car Makes Section */}
       <section className="page-section">
         <div className="carmake-container">
@@ -94,7 +75,6 @@ export default function HomePage() {
           <Link href="/car-make-selection" id="carmake-button">
             Våra bilmärken
           </Link>
-          <hr className="transparent" />
         </div>
       </section>
 
