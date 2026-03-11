@@ -45,12 +45,12 @@
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   border-radius: 0.5rem;
-  font-family: var(--font-inter), sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.1rem;
 }
 
 #index-title-name {
-  font-family: var(--font-inter), sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 5.3125rem;
   font-weight: 700;
   color: black;
@@ -62,11 +62,11 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: var(--font-nunito-sans), sans-serif;
+  font-family: 'Nunito Sans';
 }
 
 #index-intro-description {
-  font-family: var(--font-inter), sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   width: 70%;
   max-width: 79rem;
@@ -77,10 +77,6 @@
 
 
 @media (max-width: 61.9375rem) {
-  .main-slider {
-    height: clamp(21.875rem, 50vh, 28.125rem);
-  }
-  
   .content-area {
     padding-top: 0;
   }
@@ -89,6 +85,30 @@
 @media (max-width: 30rem) {
   .main-slider {
     min-height: 20rem;
+  }
+
+  #index-welcome-title > h1 {
+    width: 17.5rem;
+    font-size: 1.7rem;
+  }
+
+  #index-title-name {
+    font-size: 2.9125rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  #main-title-undertext {
+    padding: 3.125rem 0 2.775rem 0;
+    font-size: 1.575rem;
+  }
+
+  #index-intro-description {
+    font-weight: 400;
+    width: 99%;
+    font-size: 1.1125rem;
+    line-height: 2.2rem;
+    padding-bottom: 1.5rem;
   }
 }
 

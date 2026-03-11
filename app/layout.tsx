@@ -5,13 +5,13 @@ import Footer from "./components/Footer/Footer";
 import HeaderWrapper from "./components/Header/HeaderWrapper";
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
 });
 
 const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito-sans",
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sv" className={`${inter.variable} ${nunitoSans.variable}`}>
+    <html lang="sv">
       <body>
         <HeaderWrapper />
         <main id="main-content">
