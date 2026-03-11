@@ -27,6 +27,7 @@ export default function PresentationBoxes({ boxInfo, reverse = false, mirrorImag
                 fill
                 loading="lazy"
                 sizes="(max-width: 48rem) 100vw, 50vw"
+                quality={90}
                 className={mirrorImage ? 'img-mirrored' : ''}
                 />
                 <div className="tag-container">
