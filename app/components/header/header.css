@@ -20,6 +20,7 @@
   top: 0;
   z-index: 100;
   background-color: var(--bjbil-blue);
+  overflow-anchor: none;
 }
 
 .header-container::before {
@@ -104,7 +105,7 @@
   justify-content: center;
   margin: 0 auto;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), sans-serif;
   list-style: none;
 }
 
@@ -272,7 +273,7 @@
   color: #fff;
   text-decoration: none;
   font-size: 1.0625rem;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), sans-serif;
   transition: background-color 0.2s ease;
 }
 

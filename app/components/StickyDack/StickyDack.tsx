@@ -34,7 +34,7 @@ export default function StickyDack() {
       sticky.style.top = `${newPosition}px`;
     };
 
-    window.addEventListener('scroll', updateStickerPosition);
+    window.addEventListener('scroll', updateStickerPosition, { passive: true });
     updateStickerPosition();
     return () => window.removeEventListener('scroll', updateStickerPosition);
   }, []);

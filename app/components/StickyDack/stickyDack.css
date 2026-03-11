@@ -3,7 +3,8 @@
   top: 0;
   right: 0;
   z-index: 2;
-  transition: top 0.8s ease-out;
+  transition: top 0.9s ease-out;
+  overflow-anchor: none;
 }
 
 .sticky-dack img {

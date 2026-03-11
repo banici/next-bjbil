@@ -28,49 +28,49 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 2.5rem 1.25rem;
 }
 
 #index-welcome-title {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 50px 0 20px 0;
+  padding: 3.125rem 0 1.25rem 0;
 }
 
 #index-welcome-title > h1 {
   color: black;
   background-color: rgb(228, 190, 67);
-  width: 280px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 8px;
-  font-family: 'Inter';
-  font-size: 40px;
+  width: 17.5rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 2.5rem;
 }
 
 #index-title-name {
-  font-family: 'Inter';
-  font-size: 85px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 5.3125rem;
   font-weight: 700;
   color: black;
 }
 
 #main-title-undertext {
-  padding: 30px 0 70px 0;
-  font-size: 30px;
+  padding: 3.125rem 0 4.375rem 0;
+  font-size: 1.875rem;
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: 'Nunito Sans';
+  font-family: var(--font-nunito-sans), sans-serif;
 }
 
 #index-intro-description {
-  font-family: 'Inter';
+  font-family: var(--font-inter), sans-serif;
   font-weight: 400;
   width: 70%;
   max-width: 79rem;
-  font-size: 21px;
+  font-size: 1.3125rem;
   line-height: 2.5rem;
   padding-bottom: 3.5rem;
 }

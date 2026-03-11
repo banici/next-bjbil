@@ -1,5 +1,4 @@
 import VideoHero from './components/VideoHero/VideoHero';
-import Image from 'next/image';
 import Link from 'next/link';
 import './page.css';
 import PresentationBoxes from './components/PresentationBoxes/PresentationBoxes';

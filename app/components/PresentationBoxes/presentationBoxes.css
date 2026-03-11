@@ -58,7 +58,7 @@
 }
 
 .description-title {
-  font-family: 'Nunito Sans';
+  font-family: var(--font-nunito-sans), sans-serif;
   color: #000;
   margin-top: 0;
   font-size: 2.5rem;
@@ -81,7 +81,7 @@
   letter-spacing: .07em;
   line-height: 2.5rem;
   font-weight: 600;
-  font-family: 'Nunito Sans';
+  font-family: var(--font-nunito-sans), sans-serif;
   color: #000;
 }
 
