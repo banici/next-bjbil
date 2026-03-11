@@ -1,6 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 import "./header.css";
 
 interface HeaderProps {
@@ -9,6 +12,7 @@ interface HeaderProps {
 
 export default function Header({ isCollapsed = false }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -43,46 +47,46 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
           <nav className="nav-wrapper">
             <ul className="nav-list" role="list">
               <li>
-                <a href="/" onClick={closeMenu}>
+                <Link href="/" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">🏠</span>
                   Hem
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/bilmarken" onClick={closeMenu}>
+                <Link href="/bilmarken" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">🚗</span>
                   Våra bilmärken
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/tjanster" onClick={closeMenu}>
+                <Link href="/tjanster" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">⚙️</span>
                   Våra tjänster
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/om-oss" onClick={closeMenu}>
+                <Link href="/om-oss" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">👥</span>
                   Om oss
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/kontakt" onClick={closeMenu}>
+                <Link href="/Contact" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">💬</span>
                   Kundservice
-                </a>
+                </Link>
               </li>
               <li className="nav-item-highlight">
-                <a href="/boka" onClick={closeMenu}>
+                <Link href="/boka" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">📅</span>
                   Serviceförfrågan
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/dackhotell" onClick={closeMenu}>
+                <Link href="/dackhotell" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">🛞</span>
                   Däckhotell
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -103,15 +107,15 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
         <div className="header-logo-wrapper">
           <div className="container">
             <div id="header-logo" className="logo">
-              <a href="/" aria-label="Bo & Jimmy Bilservice - Till startsidan">
-                <img
+              <Link href="/" aria-label="Bo & Jimmy Bilservice - Till startsidan">
+                <Image
                   id="header-nyckel"
                   src="/images/boJimmyLoggaSVG.svg"
                   alt="Bo & Jimmy Bilservice logotyp"
-                  width="280"
-                  height="80"
+                  width={280}
+                  height={80}
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -122,25 +126,25 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
             <nav className="navigation" aria-label="Huvudnavigering">
               <ul className="nav sf-menu" role="list">
                 <li>
-                  <a href="/" aria-current="page">Hem</a>
+                  <Link href="/" aria-current={pathname === '/' ? 'page' : undefined}>Hem</Link>
                 </li>
                 <li>
-                  <a href="/bilmarken">Våra bilmärken</a>
+                  <Link href="/bilmarken" aria-current={pathname === '/bilmarken' ? 'page' : undefined}>Våra bilmärken</Link>
                 </li>
                 <li>
-                  <a href="/tjanster">Våra tjänster</a>
+                  <Link href="/tjanster" aria-current={pathname === '/tjanster' ? 'page' : undefined}>Våra tjänster</Link>
                 </li>
                 <li>
-                  <a href="/dackhotell">Däckhotell</a>
+                  <Link href="/dackhotell" aria-current={pathname === '/dackhotell' ? 'page' : undefined}>Däckhotell</Link>
                 </li>
                 <li>
-                  <a href="/om-oss">Om oss</a>
+                  <Link href="/om-oss" aria-current={pathname === '/om-oss' ? 'page' : undefined}>Om oss</Link>
                 </li>
                 <li>
-                  <a href="/kontakt">Kundservice</a>
+                  <Link href="/Contact" aria-current={pathname === '/Contact' ? 'page' : undefined}>Kundservice</Link>
                 </li>
                 <li className="nav-cta">
-                  <a href="/boka">Serviceförfrågan</a>
+                  <Link href="/boka">Serviceförfrågan</Link>
                 </li>
               </ul>
             </nav>
