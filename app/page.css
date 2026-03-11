@@ -75,6 +75,109 @@
   padding-bottom: 3.5rem;
 }
 
+/* ===== Car Make Section ===== */
+#carmake-section {
+  background-color: var(--bjbil-blue);
+}
+
+.carmake-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.car-expertise-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+}
+
+.car-btn-bread-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.car-btn-bread-box {
+  max-width: 50rem;
+}
+
+#car-btn-bread {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: #ccc;
+}
+
+#carmake-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  background-color: var(--bjbil-orange);
+  color: #000;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 3.125rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+#carmake-button:hover {
+  background-color: #fab855;
+  transform: scale(1.15);
+}
+
+#carmake-button:focus-visible {
+  outline: 0.1875rem solid #fff;
+  outline-offset: 0.25rem;
+}
+
+/* ===== Oil Section ===== */
+.oil-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #dadada;
+}
+
+.oil-wrapper {
+  max-width: 50rem;
+  width: 100%;
+}
+
+#oil-title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
+
+#oil-title-line {
+  width: 5rem;
+  height: 0.3125rem;
+  background-color: var(--bjbil-orange);
+  margin: 0.05rem auto 1.0rem 12rem;
+}
+
+.oil-wrapper p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 
 @media (max-width: 61.9375rem) {
   .content-area {
@@ -110,6 +213,34 @@
     line-height: 2.2rem;
     padding-bottom: 1.5rem;
   }
+
+  .car-expertise-title {
+    font-size: 2rem;
+  }
+
+  #carmake-button {
+    font-size: 1rem;
+    padding: 0.875rem 2rem;
+  }
+
+  #oil-title {
+    font-size: 1.75rem;
+  }
+
+  .oil-wrapper p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+
+  .carmake-container {
+    padding: 3rem 1.5rem;
+  }
+  .oil-container {
+    padding: 1rem 1.5rem;
+  }
+  #oil-title-line {
+  margin: 0.05rem auto 1.0rem 2rem;
+}
 }
 
 @media (max-height: 30rem) and (orientation: landscape) {

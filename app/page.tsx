@@ -57,7 +57,7 @@ export default function HomePage() {
       ))}
                
       {/* Car Makes Section */}
-      <section className="page-section">
+      <section className="page-section" id="carmake-section">
         <div className="carmake-container">
           <h2 className="car-expertise-title">Serva din bil hos oss</h2>
           <br />
@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       {/* Oil Section */}
-      <section className="page-section">
+      <section className="page-section" id="oil-section">
         <div className="oil-container">
           <div className="oil-wrapper">
             <div className="oil-title-container">
