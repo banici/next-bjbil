@@ -1,0 +1,695 @@
+/* ===== HERO ===== */
+.boka-hero {
+  background-color: #fff;
+  padding: 5rem 2rem 4rem 2rem;
+  text-align: center;
+}
+
+.boka-hero-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.boka-hero h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 1rem 0;
+}
+
+.boka-hero p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== LAYOUT ===== */
+.boka-section {
+  background-color: #f5f5f5;
+  padding: 4rem 2rem 6rem 2rem;
+}
+
+.boka-layout {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ===== INFO PANEL ===== */
+.boka-info-panel {
+  background-color: var(--bjbil-blue);
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  position: sticky;
+  top: 8rem;
+}
+
+.boka-info-panel h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 2rem 0;
+}
+
+.boka-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.boka-steps-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.step-num {
+  background-color: var(--bjbil-orange);
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.boka-steps-list strong {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.boka-steps-list p {
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.boka-contact-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+.boka-contact-info h3 {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem 0;
+}
+
+.boka-phone-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--bjbil-orange);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.boka-phone-link:hover {
+  color: #fff;
+}
+
+.boka-phone-link:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.boka-hours {
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ===== FORM WRAPPER ===== */
+.boka-form-wrapper {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== NOTICE ===== */
+.boka-form-notice {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background-color: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 0.375rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.notice-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: #3b82f6;
+}
+
+.boka-form-notice p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #1e40af;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== SUCCESS / ERROR ===== */
+.boka-success,
+.boka-error {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.boka-success {
+  background-color: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+}
+
+.boka-error {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+/* ===== FIELDSET ===== */
+.boka-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.boka-fieldset legend {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.25rem;
+  padding: 0;
+  width: 100%;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.boka-field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.boka-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.boka-field label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.field-hint {
+  font-weight: 400;
+  color: #888;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.1rem;
+}
+
+.boka-field input,
+.boka-field textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 0.5rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  color: #111;
+  background-color: #fafafa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.boka-field input:focus,
+.boka-field textarea:focus {
+  border-color: var(--bjbil-orange);
+  box-shadow: 0 0 0 3px rgba(236, 150, 13, 0.15);
+  outline: none;
+  background-color: #fff;
+}
+
+.reg-input {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* ===== ACCORDION ===== */
+.boka-accordion {
+  margin-bottom: 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.boka-accordion-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: #fafafa;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.boka-accordion-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+.boka-accordion-toggle:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: -0.1875rem;
+}
+
+.boka-accordion-toggle span:first-child {
+  flex: 1;
+}
+
+.selection-badge {
+  background-color: var(--bjbil-orange);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-chevron {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  color: #666;
+}
+
+.boka-accordion-toggle.open .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.boka-accordion-panel {
+  padding: 1rem 1.25rem;
+  border-top: 1.5px solid #e0e0e0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* ===== CHECKBOXES ===== */
+.boka-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: background-color 0.15s ease;
+}
+
+.boka-checkbox-label:hover {
+  background-color: #f5f5f5;
+}
+
+.boka-checkbox-label input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--bjbil-orange);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #222;
+  flex: 1;
+}
+
+.checkbox-price {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #777;
+  white-space: nowrap;
+}
+
+/* ===== GDPR ===== */
+.boka-gdpr {
+  margin-bottom: 1.5rem;
+}
+
+.boka-gdpr-label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.boka-gdpr-label input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--bjbil-orange);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.gdpr-inline-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--bjbil-orange);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.gdpr-inline-btn:hover {
+  color: #d4840a;
+}
+
+.gdpr-inline-btn:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.125rem;
+  border-radius: 0.125rem;
+}
+
+/* ===== SUBMIT ===== */
+.boka-submit {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: not-allowed;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boka-submit.enabled {
+  background-color: var(--bjbil-orange);
+  color: #000;
+  cursor: pointer;
+}
+
+.boka-submit.enabled:hover {
+  background-color: #d4840a;
+  transform: translateY(-1px);
+}
+
+.boka-submit.enabled:focus-visible {
+  outline: 0.1875rem solid #000;
+  outline-offset: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+/* ===== GDPR MODAL ===== */
+.gdpr-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.gdpr-modal {
+  background: #fff;
+  max-width: 36rem;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.gdpr-modal h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 0.25rem 0;
+}
+
+.gdpr-updated {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 2rem 0;
+}
+
+.gdpr-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.gdpr-modal-close:hover {
+  color: #000;
+}
+
+.gdpr-modal-close:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.25rem;
+}
+
+.gdpr-content h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.gdpr-content h3:first-child {
+  margin-top: 0;
+}
+
+.gdpr-content p,
+.gdpr-content address,
+.gdpr-content li {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 0 0.5rem 0;
+}
+
+.gdpr-content address {
+  font-style: normal;
+}
+
+.gdpr-content ul {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.gdpr-content a {
+  color: var(--bjbil-orange);
+  font-weight: 600;
+}
+
+.gdpr-content a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CONFIRM ===== */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.confirm-popup {
+  background: #fff;
+  max-width: 24rem;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.confirm-popup h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 0.75rem 0;
+}
+
+.confirm-popup p {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #555;
+  margin: 0 0 1.5rem 0;
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.confirm-yes,
+.confirm-no {
+  padding: 0.625rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.confirm-yes {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.confirm-yes:hover {
+  background-color: #dc2626;
+}
+
+.confirm-no {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.confirm-no:hover {
+  background-color: #ddd;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 62rem) {
+  .boka-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .boka-info-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 48rem) {
+  .boka-section {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  .boka-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .boka-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .boka-info-panel {
+    padding: 1.75rem;
+  }
+
+  .gdpr-modal {
+    padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boka-submit,
+  .boka-accordion-toggle,
+  .boka-checkbox-label,
+  .accordion-chevron {
+    transition: none;
+  }
+
+  .boka-submit.enabled:hover {
+    transform: none;
+  }
+}

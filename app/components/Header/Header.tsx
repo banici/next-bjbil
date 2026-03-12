@@ -77,7 +77,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                 </Link>
               </li>
               <li className="nav-item-highlight">
-                <Link href="/boka" onClick={closeMenu}>
+                <Link href="/booking" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">📅</span>
                   Serviceförfrågan
                 </Link>
@@ -144,7 +144,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                   <Link href="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Kundservice</Link>
                 </li>
                 <li className="nav-cta">
-                  <Link href="/boka">Serviceförfrågan</Link>
+                  <Link href="/booking">Serviceförfrågan</Link>
                 </li>
               </ul>
             </nav>

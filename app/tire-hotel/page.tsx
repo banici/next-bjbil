@@ -154,7 +154,7 @@ export default function DackhotellPage() {
         <h2 id="dack-cta-heading">Redo att boka däckhotell?</h2>
         <p>Kontakta oss eller skicka en serviceförfrågan så hjälper vi dig.</p>
         <div className="dack-cta-buttons">
-          <Link href="/boka" className="dack-cta-primary">
+          <Link href="/booking" className="dack-cta-primary">
             Skicka serviceförfrågan
           </Link>
           <Link href="/contact" className="dack-cta-secondary">

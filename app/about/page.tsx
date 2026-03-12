@@ -139,7 +139,7 @@ export default function OmOssPage() {
           <Link href="/contact" className="om-oss-cta-primary">
             Kontakta oss
           </Link>
-          <Link href="/boka" className="om-oss-cta-secondary">
+          <Link href="/booking" className="om-oss-cta-secondary">
             Skicka serviceförfrågan
           </Link>
         </div>
