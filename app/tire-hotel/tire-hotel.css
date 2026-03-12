@@ -1,0 +1,343 @@
+/* ===== HERO ===== */
+.dack-hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+}
+
+.dack-img-container {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.dack-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.80) 100%
+  );
+  z-index: 1;
+}
+
+.dack-hotell-text {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 4rem;
+  max-width: 56rem;
+  color: #fff;
+  text-align: left;
+}
+
+.dack-hotell-title {
+  margin-bottom: 1.5rem;
+}
+
+.dack-hotell-title h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.dack-subtitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0.5rem 0 0 0;
+}
+
+.dack-hotell-text p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  max-width: 44rem;
+  font-weight: 500;
+}
+
+.dack-price {
+  display: inline-block;
+  background-color: var(--bjbil-orange);
+  color: #000 !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600 !important;
+  margin-top: 0.5rem;
+}
+
+.dack-price strong {
+  font-size: 1.2em;
+}
+
+/* ===== STEPS ===== */
+.dack-steps-section {
+  background-color: #e3e3e3;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.dack-steps-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 3rem 0;
+}
+
+.four-boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.dack-box {
+  background-color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dack-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dack-box-icon {
+  width: 8rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.dack-box h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  padding-bottom: 0.25rem;
+}
+
+.dack-box p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+}
+
+/* ===== VILLKOR ===== */
+.villkor-section {
+  background-color: #f5f5f5;
+  padding: 5rem 2rem;
+}
+
+.villkor-inner {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.villkor-inner h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 2rem 0;
+}
+
+.villkor-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.villkor-list li {
+  border-left: 3px solid var(--bjbil-orange);
+  padding-left: 1.25rem;
+}
+
+.villkor-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 0.25rem 0;
+}
+
+.villkor-info {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+}
+
+.villkor-footer-note {
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.villkor-footer-note a {
+  color: var(--bjbil-orange);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.villkor-footer-note a:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.25rem;
+  border-radius: 0.125rem;
+}
+
+/* ===== CTA ===== */
+.dack-cta-section {
+  background-color: var(--bjbil-blue);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.dack-cta-section h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem 0;
+}
+
+.dack-cta-section p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 2.5rem 0;
+}
+
+.dack-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dack-cta-primary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--bjbil-orange);
+  color: #000;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 3rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.dack-cta-primary:hover {
+  background-color: #d4840a;
+  transform: scale(1.03);
+}
+
+.dack-cta-primary:focus-visible {
+  outline: 0.1875rem solid #fff;
+  outline-offset: 0.25rem;
+  border-radius: 3rem;
+}
+
+.dack-cta-secondary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: transparent;
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 3rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.dack-cta-secondary:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dack-cta-secondary:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.25rem;
+  border-radius: 3rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 62rem) {
+  .four-boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 48rem) {
+  .dack-hotell-text {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .dack-img-container {
+    min-height: 38rem;
+    align-items: center;
+  }
+
+  .dack-hotell-text p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .four-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .dack-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dack-cta-primary,
+  .dack-cta-secondary {
+    width: 100%;
+    max-width: 20rem;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dack-box,
+  .dack-cta-primary,
+  .dack-cta-secondary {
+    transition: none;
+  }
+
+  .dack-box:hover {
+    transform: none;
+  }
+}

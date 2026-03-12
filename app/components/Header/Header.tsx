@@ -83,7 +83,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/dackhotell" onClick={closeMenu}>
+                <Link href="/tire-hotel" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">🛞</span>
                   Däckhotell
                 </Link>
@@ -135,7 +135,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                   <Link href="/tjanster" aria-current={pathname === '/tjanster' ? 'page' : undefined}>Våra tjänster</Link>
                 </li>
                 <li>
-                  <Link href="/dackhotell" aria-current={pathname === '/dackhotell' ? 'page' : undefined}>Däckhotell</Link>
+                  <Link href="/tire-hotel" aria-current={pathname === '/tire-hotel' ? 'page' : undefined}>Däckhotell</Link>
                 </li>
                 <li>
                   <Link href="/om-oss" aria-current={pathname === '/om-oss' ? 'page' : undefined}>Om oss</Link>
