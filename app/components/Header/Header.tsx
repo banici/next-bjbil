@@ -53,7 +53,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/bilmarken" onClick={closeMenu}>
+                <Link href="/car-makes" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">🚗</span>
                   Våra bilmärken
                 </Link>
@@ -129,7 +129,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                   <Link href="/" aria-current={pathname === '/' ? 'page' : undefined}>Hem</Link>
                 </li>
                 <li>
-                  <Link href="/bilmarken" aria-current={pathname === '/bilmarken' ? 'page' : undefined}>Våra bilmärken</Link>
+                  <Link href="/car-makes" aria-current={pathname === '/car-makes' ? 'page' : undefined}>Våra bilmärken</Link>
                 </li>
                 <li>
                   <Link href="/tjanster" aria-current={pathname === '/tjanster' ? 'page' : undefined}>Våra tjänster</Link>

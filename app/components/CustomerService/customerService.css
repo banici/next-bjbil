@@ -1,7 +1,6 @@
 /* ===== HERO ===== */
 .contact-hero {
   background-color: #fff;
-  border-top: 4px solid var(--bjbil-orange);
   padding: 5rem 2rem 4rem;
   text-align: center;
 }
