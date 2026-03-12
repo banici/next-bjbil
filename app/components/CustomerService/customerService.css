@@ -1,0 +1,388 @@
+/* ===== HERO ===== */
+.contact-hero {
+  background-color: #fff;
+  border-top: 4px solid var(--bjbil-orange);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+}
+
+.contact-hero-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.contact-hero h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 1rem;
+}
+
+.contact-hero p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== SECTION ===== */
+.cs-section {
+  background-color: #f5f5f5;
+  padding: 3rem 2rem 6rem;
+}
+
+.cs-container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+/* ===== TABS ===== */
+.cs-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background-color: #e8e8e8;
+  border-radius: 0.625rem;
+  padding: 0.3rem;
+}
+
+.cs-tab-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.cs-tab-btn:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #222;
+}
+
+.cs-tab-btn.active {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cs-tab-btn:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.125rem;
+}
+
+/* ===== PANELS ===== */
+.cs-panels {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.cs-panel {
+  display: block;
+}
+
+.cs-panel[hidden] {
+  display: none;
+}
+
+.cs-panel-inner {
+  padding: 2.5rem;
+}
+
+.cs-panel-inner h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 0.75rem;
+}
+
+.cs-intro {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0 0 2rem;
+  max-width: 38rem;
+}
+
+/* ===== CONTACT DETAILS ===== */
+.contact-detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-detail-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  color: #222;
+  transition: background-color 0.15s ease;
+  border-radius: 0.375rem;
+}
+
+.contact-detail-list li:hover {
+  background-color: #fafafa;
+}
+
+.contact-detail-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--bjbil-blue);
+}
+
+.contact-detail-list a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.contact-detail-list a:hover {
+  color: var(--bjbil-orange);
+}
+
+.contact-detail-list a:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.125rem;
+  border-radius: 0.125rem;
+}
+
+.closed-text {
+  color: #dc2626;
+}
+
+.contact-cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cs-cta-primary {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  background-color: var(--bjbil-orange);
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cs-cta-primary:hover {
+  background-color: #d4840a;
+  transform: translateY(-1px);
+}
+
+.cs-cta-primary:focus-visible {
+  outline: 0.1875rem solid #000;
+  outline-offset: 0.25rem;
+}
+
+.cs-cta-secondary {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  background-color: transparent;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #000;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cs-cta-secondary:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.cs-cta-secondary:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.25rem;
+}
+
+/* ===== FAQ ACCORDION ===== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+  color: var(--bjbil-orange);
+}
+
+.faq-question:focus-visible {
+  outline: 0.1875rem solid var(--bjbil-orange);
+  outline-offset: 0.125rem;
+  border-radius: 0.25rem;
+}
+
+.faq-question.open {
+  color: var(--bjbil-orange);
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  color: currentColor;
+}
+
+.faq-question.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.25s ease;
+  opacity: 0;
+  padding-bottom: 0;
+}
+
+.faq-answer.open {
+  max-height: 30rem;
+  opacity: 1;
+  padding-bottom: 1.25rem;
+}
+
+.faq-answer p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.97rem;
+  color: #444;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ===== WARRANTY ===== */
+.warranty-highlight {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background-color: #fffbeb;
+  border-left: 4px solid var(--bjbil-orange);
+  border-radius: 0.375rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+.warranty-highlight p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.mrf-link {
+  color: var(--bjbil-orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mrf-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 48rem) {
+  .cs-section {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .cs-panel-inner {
+    padding: 1.5rem;
+  }
+
+  .cs-tabs {
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+
+  .cs-tab-btn {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.5rem;
+  }
+
+  .contact-cta-row {
+    flex-direction: column;
+  }
+
+  .cs-cta-primary,
+  .cs-cta-secondary {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer,
+  .faq-chevron,
+  .cs-tab-btn,
+  .cs-cta-primary,
+  .cs-cta-secondary {
+    transition: none;
+  }
+
+  .cs-cta-primary:hover {
+    transform: none;
+  }
+}
