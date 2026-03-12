@@ -112,6 +112,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                   id="header-nyckel"
                   src="/images/boJimmyLoggaSVG.svg"
                   alt="Bo & Jimmy Bilservice logotyp"
+                  loading='eager'
                   width={280}
                   height={80}
                 />

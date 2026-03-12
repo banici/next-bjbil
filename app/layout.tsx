@@ -49,7 +49,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="sv">
+    <html lang="sv" data-scroll-behavior="smooth">
       <body>
         <script
           type="application/ld+json"

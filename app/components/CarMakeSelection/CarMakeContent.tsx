@@ -43,6 +43,7 @@ export default function CarMakeContent({ makes }: Props) {
                 src={make.heroImage}
                 alt={make.heroAlt}
                 fill
+                loading='eager'
                 sizes="(max-width: 48rem) 100vw, 25vw"
                 className="cm-card-img"
                 quality={85}
@@ -90,6 +91,7 @@ export default function CarMakeContent({ makes }: Props) {
                       src={sec.imageSrc}
                       alt={sec.imageAlt}
                       fill
+                      loading='eager'
                       sizes="(max-width: 48rem) 100vw, 40vw"
                       className="cm-section-img"
                       quality={85}
