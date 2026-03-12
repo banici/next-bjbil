@@ -16,9 +16,45 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+    const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AutoRepair',
+    name: 'Bo & Jimmy Bilservice AB',
+    description: 'Specialiserad bilverkstad för BMW, MINI, TESLA och VAG',
+    url: 'https://bjbil.se',
+    telephone: '031-84 75 29',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Aminogatan 15E',
+      addressLocality: 'Mölndal',
+      postalCode: '431 53',
+      addressCountry: 'SE',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+        opens: '07:00',
+        closes: '17:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Friday',
+        opens: '07:00',
+        closes: '12:00',
+      },
+    ],
+    priceRange: '$$',
+  };
+
   return (
     <html lang="sv">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <HeaderWrapper />
         <main id="main-content">
           {children}

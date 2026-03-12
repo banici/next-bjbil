@@ -3,10 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import './tire-hotel.css';
 
+// app/tire-hotel/page.tsx
 export const metadata: Metadata = {
-  title: 'Däckhotell – Bo & Jimmy Bilservice AB',
-  description: 'Säker förvaring av dina däck hos Bo & Jimmy Bilservice i Mölndal. Pris 1699 kr per säsong inkl. hjultvätt. Vi hanterar däckbyte, tvätt och förvaring.',
-  keywords: ['däckhotell', 'däckförvaring', 'däckbyte', 'Mölndal', 'Göteborg', 'bilverkstad'],
+  title: 'Däckhotell Mölndal – Förvaring av däck | Bo & Jimmy Bilservice',
+  description: 'Förvara dina däck tryggt hos oss i Mölndal. 1 699 kr/säsong inkl. hjultvätt och däckbyte. Ring 031-84 75 29.',
+  openGraph: {
+    title: 'Däckhotell – Bo & Jimmy Bilservice',
+    description: 'Säker däckförvaring i Mölndal från 1 699 kr/säsong.',
+    url: 'https://bjbil.se/tire-hotel',
+    siteName: 'Bo & Jimmy Bilservice',
+    locale: 'sv_SE',
+    type: 'website',
+  },
 };
 
 const steps = [
