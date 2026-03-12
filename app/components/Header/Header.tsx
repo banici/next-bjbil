@@ -65,7 +65,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/om-oss" onClick={closeMenu}>
+                <Link href="/about" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">👥</span>
                   Om oss
                 </Link>
@@ -138,7 +138,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                   <Link href="/tire-hotel" aria-current={pathname === '/tire-hotel' ? 'page' : undefined}>Däckhotell</Link>
                 </li>
                 <li>
-                  <Link href="/om-oss" aria-current={pathname === '/om-oss' ? 'page' : undefined}>Om oss</Link>
+                  <Link href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>Om oss</Link>
                 </li>
                 <li>
                   <Link href="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Kundservice</Link>
