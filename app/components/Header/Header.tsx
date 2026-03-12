@@ -71,7 +71,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/Contact" onClick={closeMenu}>
+                <Link href="/contact" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">💬</span>
                   Kundservice
                 </Link>
@@ -141,7 +141,7 @@ export default function Header({ isCollapsed = false }: HeaderProps) {
                   <Link href="/om-oss" aria-current={pathname === '/om-oss' ? 'page' : undefined}>Om oss</Link>
                 </li>
                 <li>
-                  <Link href="/Contact" aria-current={pathname === '/Contact' ? 'page' : undefined}>Kundservice</Link>
+                  <Link href="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Kundservice</Link>
                 </li>
                 <li className="nav-cta">
                   <Link href="/boka">Serviceförfrågan</Link>
