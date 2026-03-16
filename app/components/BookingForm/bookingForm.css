@@ -693,3 +693,132 @@
     transform: none;
   }
 }
+
+/* ===== SUBMIT SPINNER ===== */
+.boka-submit-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.boka-spinner {
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== SUCCESS OVERLAY ===== */
+.boka-success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.boka-success-modal {
+  background: #fff;
+  max-width: 28rem;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(1.5rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.boka-success-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.boka-success-modal h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 1rem;
+}
+
+.boka-success-modal p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+}
+
+.boka-success-sub {
+  font-size: 0.9rem !important;
+  color: #888 !important;
+}
+
+.boka-success-sub a {
+  color: var(--bjbil-orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.boka-success-sub a:hover {
+  text-decoration: underline;
+}
+
+.boka-success-close {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--bjbil-orange);
+  color: #000;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.boka-success-close:hover {
+  background-color: #d4840a;
+}
+
+.boka-success-close:focus-visible {
+  outline: 0.1875rem solid #000;
+  outline-offset: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boka-spinner {
+    animation: none;
+    border-top-color: transparent;
+  }
+
+  .boka-success-overlay,
+  .boka-success-modal {
+    animation: none;
+  }
+}

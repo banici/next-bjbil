@@ -173,19 +173,37 @@ export default function BookingForm() {
             </p>
           </div>
 
-          {submitStatus === 'success' && (
-            <div className="boka-success" role="alert" aria-live="polite">
-              <span aria-hidden="true">✅</span>
-              <p>Din serviceförfrågan har skickats! Vi hör av oss inom en arbetsdag.</p>
-            </div>
-          )}
-
-          {submitStatus === 'error' && (
-            <div className="boka-error" role="alert" aria-live="polite">
-              <span aria-hidden="true">❌</span>
-              <p>Kunde inte skicka formuläret. Försök igen eller ring oss på 031-84 75 29.</p>
-            </div>
-          )}
+          {/* Success overlay */}
+            {submitStatus === 'success' && (
+              <div
+                className="boka-success-overlay"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="success-heading"
+              >
+                <div className="boka-success-modal">
+                  <div className="boka-success-icon" aria-hidden="true">✅</div>
+                  <h2 id="success-heading">Förfrågan skickad!</h2>
+                  <p>Tack, <strong>{form.name || 'du'}</strong>! Vi har tagit emot din serviceförfrågan och återkommer inom en arbetsdag med lediga tider.</p>
+                  <p className="boka-success-sub">Frågor? Ring oss på <a href="tel:031847529">031-84 75 29</a></p>
+                  <button
+                    className="boka-success-close"
+                    onClick={() => setSubmitStatus('idle')}
+                    aria-label="Stäng bekräftelse"
+                  >
+                    Stäng
+                  </button>
+                </div>
+              </div>
+            )}
+            
+            {/* Error banner — keep inline */}
+            {submitStatus === 'error' && (
+              <div className="boka-error" role="alert" aria-live="polite">
+                <span aria-hidden="true">❌</span>
+                <p>Kunde inte skicka formuläret. Försök igen eller ring oss på <a href="tel:031847529">031-84 75 29</a>.</p>
+              </div>
+            )}
 
           <form
             onSubmit={handleSubmit}
@@ -380,14 +398,21 @@ export default function BookingForm() {
             </div>
 
             {/* Submit */}
-            <button
-              type="submit"
-              className={`boka-submit ${isValid ? 'enabled' : ''}`}
-              disabled={!isValid || submitStatus === 'sending'}
-              aria-disabled={!isValid}
-            >
-              {submitStatus === 'sending' ? 'Skickar...' : 'Skicka serviceförfrågan'}
-            </button>
+              <button
+                type="submit"
+                className={`boka-submit ${isValid ? 'enabled' : ''}`}
+                disabled={!isValid || submitStatus === 'sending'}
+                aria-disabled={!isValid}
+              >
+                {submitStatus === 'sending' ? (
+                  <span className="boka-submit-inner">
+                    <span className="boka-spinner" aria-hidden="true" />
+                    Skickar...
+                  </span>
+                ) : (
+                  'Skicka serviceförfrågan'
+                )}
+              </button>
           </form>
         </div>
       </div>
