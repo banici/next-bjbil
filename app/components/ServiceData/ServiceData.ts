@@ -96,7 +96,7 @@ Vi erbjuder också däck från flera kända leverantörer och hjälper dig att h
     slug: 'vatgas-rengoring',
     title: 'Vätgas Rengöring',
     iconSrc: '/icons/services/ikon-h2.png',
-    imageSrc: '/images/service-banner/service-diagnos-fordon.jpg',
+    imageSrc: '/images/service-banner/DPF-bild.jpg',
     imageAlt: 'Vätgasrengöring Hydrive hos Bo & Jimmy',
     heroQuestion: 'Vill du förbättra motorns prestanda och minska utsläppen?',
     description: `Hydrive är en innovativ vätgasbaserad rengöringsprocess som avlägsnar koluppbyggnad från motorn och avgassystemet utan demontering.
