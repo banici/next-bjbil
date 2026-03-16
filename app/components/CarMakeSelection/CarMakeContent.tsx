@@ -135,10 +135,22 @@ function MobileCarousel({
   activeMake: string | null;
 }) {
   const [index, setIndex] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
 
-  const prev = () => setIndex(i => (i - 1 + makes.length) % makes.length);
-  const next = () => setIndex(i => (i + 1) % makes.length);
+  const total = makes.length;
+  const prevIndex = (index - 1 + total) % total;
+  const nextIndex = (index + 1) % total;
+
+  const prev = () => {
+    setAnimKey(k => k + 1);
+    setIndex(i => (i - 1 + total) % total);
+  };
+
+  const next = () => {
+    setAnimKey(k => k + 1);
+    setIndex(i => (i + 1) % total);
+  };
 
   const handleTouchStart = (e: React.TouchEvent) => setTouchStartX(e.touches[0].clientX);
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -147,7 +159,12 @@ function MobileCarousel({
     else if (diff > 50) prev();
   };
 
-  const current = makes[index];
+  const getClass = (i: number) => {
+    if (i === index) return 'cm-carousel-item active';
+    if (i === prevIndex) return 'cm-carousel-item prev';
+    if (i === nextIndex) return 'cm-carousel-item next';
+    return 'cm-carousel-item hidden';
+  };
 
   return (
     <div
@@ -157,53 +174,37 @@ function MobileCarousel({
       aria-label="Välj bilmärke (svep)"
       role="region"
     >
-      <button
-        className="cm-carousel-arrow left"
-        onClick={prev}
-        aria-label="Föregående bilmärke"
-      >
+      <button className="cm-carousel-arrow left" onClick={prev} aria-label="Föregående bilmärke">
         <svg width="12" height="20" viewBox="0 0 12 20" fill="none" aria-hidden="true">
           <path d="M10 2L2 10L10 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
         </svg>
       </button>
 
       <div className="cm-carousel-track">
-        {makes.map((make, i) => {
-          const offset = i - index;
-          let cls = 'cm-carousel-item hidden';
-          if (offset === 0) cls = 'cm-carousel-item active';
-          else if (offset === -1 || (index === 0 && i === makes.length - 1)) cls = 'cm-carousel-item prev';
-          else if (offset === 1 || (index === makes.length - 1 && i === 0)) cls = 'cm-carousel-item next';
-
-          return (
-            <button
-              key={make.id}
-              className={cls}
-              onClick={() => onSelect(make.id)}
-              aria-pressed={activeMake === make.id}
-              aria-label={make.label}
-            >
-              <Image
-                src={make.heroImage}
-                alt={make.heroAlt}
-                fill
-                sizes="80vw"
-                className="cm-carousel-img"
-                quality={80}
-              />
-              <div className="cm-carousel-label" aria-hidden="true">
-                <span>{make.label}</span>
-              </div>
-            </button>
-          );
-        })}
+        {makes.map((make, i) => (
+          <button
+            key={make.id}
+            className={getClass(i)}
+            onClick={() => onSelect(make.id)}
+            aria-pressed={activeMake === make.id}
+            aria-label={make.label}
+          >
+            <Image
+              src={make.heroImage}
+              alt={make.heroAlt}
+              fill
+              sizes="80vw"
+              className="cm-carousel-img"
+              quality={80}
+            />
+            <div className="cm-carousel-label" aria-hidden="true">
+              <span>{make.label}</span>
+            </div>
+          </button>
+        ))}
       </div>
 
-      <button
-        className="cm-carousel-arrow right"
-        onClick={next}
-        aria-label="Nästa bilmärke"
-      >
+      <button className="cm-carousel-arrow right" onClick={next} aria-label="Nästa bilmärke">
         <svg width="12" height="20" viewBox="0 0 12 20" fill="none" aria-hidden="true">
           <path d="M2 2L10 10L2 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
         </svg>
@@ -217,7 +218,10 @@ function MobileCarousel({
             aria-selected={i === index}
             aria-label={make.label}
             className={`cm-dot ${i === index ? 'active' : ''}`}
-            onClick={() => setIndex(i)}
+            onClick={() => {
+              setAnimKey(k => k + 1);
+              setIndex(i);
+            }}
           />
         ))}
       </div>

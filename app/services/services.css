@@ -313,13 +313,23 @@
     aspect-ratio: 2 / 1;
   }
 
+  .tjanster-card-img-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
   .tjanster-card-img {
-    padding: 0.5rem;
-    width: 85% !important; /* constrain icon width */
-    height: 95% !important; /* constrain icon height */
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%); /* true center */
+    position: relative !important;
+    width: 65% !important;
+    height: 85% !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    object-fit: contain;
   }
 
   .tjanster-card h2 {
@@ -331,6 +341,12 @@
     padding: 0.75rem;
     font-size: 1.3rem;
     width: 100%;
+  }
+
+    .tjanster-bg-wrapper {
+    background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.23)),
+      url('/images/service-banner/service-background.png') center / contain no-repeat;
+    background-color: var(--bjbil-blue); /* fills the gaps around the image */
   }
 }
 }

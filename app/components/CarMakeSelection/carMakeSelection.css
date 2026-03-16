@@ -189,6 +189,7 @@
 }
 
 /* ===== MOBILE CAROUSEL ===== */
+/* ===== MOBILE CAROUSEL ===== */
 .cm-mobile-carousel {
   display: none;
   position: relative;
@@ -197,56 +198,79 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-  overflow: hidden;
 }
 
 .cm-carousel-track {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: visible;
 }
 
 .cm-carousel-item {
   position: absolute;
-  inset: 0;
+  top: 0;
+  height: 100%;
   border: none;
   padding: 0;
   cursor: pointer;
   border-radius: 0.75rem;
   overflow: hidden;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: left 0.4s ease, width 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
 }
 
 .cm-carousel-item.active {
-  transform: translateX(0) scale(1);
-  opacity: 1;
-  z-index: 3;
   width: 65%;
-  left: 50%;
-  translate: -50% 0;
+  left: 17.5%;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+  pointer-events: auto;
 }
 
 .cm-carousel-item.prev {
-  transform: translateX(-30%) scale(0.82);
-  opacity: 0.55;
+  width: 55%;
+  left: -12%;
+  opacity: 0.5;
+  transform: scale(0.9);
   z-index: 2;
-  width: 60%;
-  left: 0;
+  pointer-events: none;
 }
 
 .cm-carousel-item.next {
-  transform: translateX(30%) scale(0.82);
-  opacity: 0.55;
+  width: 55%;
+  left: 57%;
+  opacity: 0.5;
+  transform: scale(0.9);
   z-index: 2;
-  width: 60%;
-  right: 0;
-  left: auto;
+  pointer-events: none;
 }
 
 .cm-carousel-item.hidden {
+  width: 55%;
+  left: 50%;
   opacity: 0;
+  transform: scale(0.8);
   z-index: 1;
   pointer-events: none;
+}
+
+.cm-carousel-track[data-direction="left"] .cm-carousel-item.active {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+.cm-carousel-track[data-direction="right"] .cm-carousel-item.active {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
 }
 
 .cm-carousel-img {
@@ -518,6 +542,11 @@
   .cm-btn-primary,
   .cm-btn-secondary {
     transition: none;
+  }
+
+  .cm-carousel-track[data-direction="left"] .cm-carousel-item.active,
+  .cm-carousel-track[data-direction="right"] .cm-carousel-item.active {
+    animation: none;
   }
 
   .cm-btn-primary:hover {
