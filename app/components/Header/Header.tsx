@@ -114,27 +114,48 @@ useEffect(() => {
             id="mobile-sidebar"
             className={`nav-sidebar ${isMenuOpen ? 'open' : ''}`}
           >
-            <ul className="nav-list">
+            <ul className="nav-list" role="list">
               <li>
-                <Link href="/" onClick={closeMenu}>Hem</Link>
+                <Link href="/" onClick={closeMenu}>
+                  <span className="nav-icon" aria-hidden="true">🏠</span>
+                  Hem
+                </Link>
               </li>
               <li>
-                <Link href="/car-makes" onClick={closeMenu}>Våra bilmärken</Link>
+                <Link href="/car-makes" onClick={closeMenu}>
+                  <span className="nav-icon" aria-hidden="true">🚗</span>
+                  Våra bilmärken
+                </Link>
               </li>
               <li>
-                <Link href="/services" onClick={closeMenu}>Våra tjänster</Link>
+                <Link href="/services" onClick={closeMenu}>
+                  <span className="nav-icon" aria-hidden="true">⚙️</span>
+                  Våra tjänster
+                </Link>
               </li>
               <li>
-                <Link href="/tire-hotel" onClick={closeMenu}>Däckhotell</Link>
+                <Link href="/about" onClick={closeMenu}>
+                  <span className="nav-icon" aria-hidden="true">👥</span>
+                  Om oss
+                </Link>
               </li>
               <li>
-                <Link href="/about" onClick={closeMenu}>Om oss</Link>
-              </li>
-              <li>
-                <Link href="/contact" onClick={closeMenu}>Kundservice</Link>
+                <Link href="/contact" onClick={closeMenu}>
+                  <span className="nav-icon" aria-hidden="true">💬</span>
+                  Kundservice
+                </Link>
               </li>
               <li className="nav-item-highlight">
-                <Link href="/booking" onClick={closeMenu}>Serviceförfrågan</Link>
+                <Link href="/booking" onClick={closeMenu}>
+                  <span className="nav-icon" aria-hidden="true">📅</span>
+                  Serviceförfrågan
+                </Link>
+              </li>
+              <li>
+                <Link href="/tire-hotel" onClick={closeMenu}>
+                  <span className="nav-icon" aria-hidden="true">🛞</span>
+                  Däckhotell
+                </Link>
               </li>
             </ul>
           </aside>
