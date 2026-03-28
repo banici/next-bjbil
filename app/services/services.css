@@ -307,10 +307,12 @@
   .tjanster-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+    justify-items: center;
   }
 
   .tjanster-card {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 1.1;
+    width: 15rem;
   }
 
   .tjanster-card-img-wrapper {
@@ -323,13 +325,7 @@
   }
 
   .tjanster-card-img {
-    position: relative !important;
-    width: 65% !important;
-    height: 85% !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    object-fit: contain;
+    padding: 0;
   }
 
   .tjanster-card h2 {
