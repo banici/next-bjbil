@@ -1,157 +1,174 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import "./header.css";
+import './header.css';
 
-interface HeaderProps {
-  isCollapsed?: boolean;
-}
+const DESKTOP_THRESHOLD = 206;
+const MOBILE_THRESHOLD = 55;
 
-export default function Header({ isCollapsed = false }: HeaderProps) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [headerFixed, setHeaderFixed] = useState(false);
+  const [navFixed, setNavFixed] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
+  const [headerHeight, setHeaderHeight] = useState(0);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const headerRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    const header = headerRef.current;
+
+    const measure = () => {
+      if (nav) setNavHeight(nav.offsetHeight);
+      if (header) setHeaderHeight(header.offsetHeight);
+    };
+
+    measure();
+
+    const ro = new ResizeObserver(measure);
+    if (nav) ro.observe(nav);
+    if (header) ro.observe(header);
+
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      const isDesktop = window.innerWidth >= 992;
+
+      if (isDesktop) {
+        setNavFixed(scrollY > DESKTOP_THRESHOLD);
+        setHeaderFixed(false);
+      } else {
+        setHeaderFixed(scrollY > MOBILE_THRESHOLD);
+        setNavFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      ro.disconnect();
+    };
+  }, []);
 
   return (
-    <header className={`header ${isCollapsed ? 'header-collapsed' : ''}`}>
-      {/* Mobile Navigation */}
-      <div className="mobile-navigator">
-        <button
-          className={`navigator-menu ${isMenuOpen ? 'open' : ''}`}
-          onClick={toggleMenu}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-sidebar"
-          aria-label={isMenuOpen ? 'Stäng meny' : 'Öppna meny'}
-        >
-          <span className="hamburger-bar" aria-hidden="true"></span>
-          <span className="hamburger-bar" aria-hidden="true"></span>
-          <span className="hamburger-bar" aria-hidden="true"></span>
-        </button>
+    <>
+      {/* Spacer divs to prevent layout jump */}
+      {navFixed && <div style={{ height: navHeight }} />}
+      {headerFixed && <div style={{ height: headerHeight }} />}
 
-        <aside
-          id="mobile-sidebar"
-          className={`nav-sidebar ${isMenuOpen ? 'open' : ''}`}
-          aria-label="Mobilmeny"
-          aria-hidden={!isMenuOpen}
-        >
-          <nav className="nav-wrapper">
-            <ul className="nav-list" role="list">
+      <header
+        ref={headerRef}
+        className={`header ${headerFixed ? 'header-fixed' : ''}`}
+      >
+        {/* Mobile Navigation */}
+        <div className="mobile-navigator">
+          <button
+            className={`navigator-menu ${isMenuOpen ? 'open' : ''}`}
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-sidebar"
+            aria-label={isMenuOpen ? 'Stäng meny' : 'Öppna meny'}
+          >
+            <span className="hamburger-bar" />
+            <span className="hamburger-bar" />
+            <span className="hamburger-bar" />
+          </button>
+
+          <aside
+            id="mobile-sidebar"
+            className={`nav-sidebar ${isMenuOpen ? 'open' : ''}`}
+          >
+            <ul className="nav-list">
               <li>
-                <Link href="/" onClick={closeMenu}>
-                  <span className="nav-icon" aria-hidden="true">🏠</span>
-                  Hem
-                </Link>
+                <Link href="/" onClick={closeMenu}>Hem</Link>
               </li>
               <li>
-                <Link href="/car-makes" onClick={closeMenu}>
-                  <span className="nav-icon" aria-hidden="true">🚗</span>
-                  Våra bilmärken
-                </Link>
+                <Link href="/car-makes" onClick={closeMenu}>Våra bilmärken</Link>
               </li>
               <li>
-                <Link href="/services" onClick={closeMenu}>
-                  <span className="nav-icon" aria-hidden="true">⚙️</span>
-                  Våra tjänster
-                </Link>
+                <Link href="/services" onClick={closeMenu}>Våra tjänster</Link>
               </li>
               <li>
-                <Link href="/about" onClick={closeMenu}>
-                  <span className="nav-icon" aria-hidden="true">👥</span>
-                  Om oss
-                </Link>
+                <Link href="/tire-hotel" onClick={closeMenu}>Däckhotell</Link>
               </li>
               <li>
-                <Link href="/contact" onClick={closeMenu}>
-                  <span className="nav-icon" aria-hidden="true">💬</span>
-                  Kundservice
-                </Link>
+                <Link href="/about" onClick={closeMenu}>Om oss</Link>
+              </li>
+              <li>
+                <Link href="/contact" onClick={closeMenu}>Kundservice</Link>
               </li>
               <li className="nav-item-highlight">
-                <Link href="/booking" onClick={closeMenu}>
-                  <span className="nav-icon" aria-hidden="true">📅</span>
-                  Serviceförfrågan
-                </Link>
-              </li>
-              <li>
-                <Link href="/tire-hotel" onClick={closeMenu}>
-                  <span className="nav-icon" aria-hidden="true">🛞</span>
-                  Däckhotell
-                </Link>
+                <Link href="/booking" onClick={closeMenu}>Serviceförfrågan</Link>
               </li>
             </ul>
-          </nav>
-        </aside>
+          </aside>
 
-        {isMenuOpen && (
+          {isMenuOpen && <div className="menu-overlay" onClick={closeMenu} />}
+        </div>
+
+        {/* Logo + Navigation */}
+        <div className="header-wrapper">
+          <div className="header-logo-wrapper">
+            <div className="container">
+              <div id="header-logo" className="logo">
+                <Link href="/">
+                  <Image
+                    src="/images/boJimmyLoggaSVG.svg"
+                    alt="Bo & Jimmy Bilservice logotyp"
+                    width={280}
+                    height={80}
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div
-            className="menu-overlay"
-            onClick={closeMenu}
-            aria-hidden="true"
-          />
-        )}
-      </div>
-
-      {/* Header Content */}
-      <div className="header-wrapper">
-        {/* Logo - göms vid scroll */}
-        <div className="header-logo-wrapper">
-          <div className="container">
-            <div id="header-logo" className="logo">
-              <Link href="/" aria-label="Bo & Jimmy Bilservice - Till startsidan">
-                <Image
-                  id="header-nyckel"
-                  src="/images/boJimmyLoggaSVG.svg"
-                  alt="Bo & Jimmy Bilservice logotyp"
-                  loading='eager'
-                  width={280}
-                  height={80}
-                />
-              </Link>
+            ref={navRef}
+            className={`navigation-wrapper ${navFixed ? 'navigation-fixed' : ''}`}
+          >
+            <div className="container">
+              <nav className="navigation">
+                <ul className="nav sf-menu">
+                  <li>
+                    <Link href="/" aria-current={pathname === '/' ? 'page' : undefined}>Hem</Link>
+                  </li>
+                  <li>
+                    <Link href="/car-makes">Våra bilmärken</Link>
+                  </li>
+                  <li>
+                    <Link href="/services">Våra tjänster</Link>
+                  </li>
+                  <li>
+                    <Link href="/tire-hotel">Däckhotell</Link>
+                  </li>
+                  <li>
+                    <Link href="/about">Om oss</Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">Kundservice</Link>
+                  </li>
+                  <li className="nav-cta">
+                    <Link href="/booking">Serviceförfrågan</Link>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
-
-        {/* Desktop Navigation - alltid synlig */}
-        <div className="navigation-wrapper" id="navigation-wrapper">
-          <div className="container">
-            <nav className="navigation" aria-label="Huvudnavigering">
-              <ul className="nav sf-menu" role="list">
-                <li>
-                  <Link href="/" aria-current={pathname === '/' ? 'page' : undefined}>Hem</Link>
-                </li>
-                <li>
-                  <Link href="/car-makes" aria-current={pathname === '/car-makes' ? 'page' : undefined}>Våra bilmärken</Link>
-                </li>
-                <li>
-                  <Link href="/services" aria-current={pathname === '/services' ? 'page' : undefined}>Våra tjänster</Link>
-                </li>
-                <li>
-                  <Link href="/tire-hotel" aria-current={pathname === '/tire-hotel' ? 'page' : undefined}>Däckhotell</Link>
-                </li>
-                <li>
-                  <Link href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>Om oss</Link>
-                </li>
-                <li>
-                  <Link href="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Kundservice</Link>
-                </li>
-                <li className="nav-cta">
-                  <Link href="/booking">Serviceförfrågan</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

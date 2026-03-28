@@ -29,15 +29,6 @@ html {
   }
 }
 
-.header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 100;
-}
-
 @media (max-width: 62rem) {
   /* Add media query styles for mobile devices */
 }
