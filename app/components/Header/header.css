@@ -181,16 +181,25 @@
   z-index: 1004; /* above nav-sidebar */
 }
 
+/* Base bars */
 .hamburger-bar {
+  display: block;
   width: var(--bar-width);
   height: var(--bar-height);
-  background: #fff;
-  transition: transform var(--animation-timing), opacity var(--animation-timing);
+  background-color: #fff;
+  border-radius: 0.125rem;
+  transition: transform var(--animation-timing), opacity var(--animation-timing), width var(--animation-timing);
+  transform-origin: center; /* important */
 }
 
-/* Hamburger animation */
+/* Hamburger → X */
+.navigator-menu.open .hamburger-bar:nth-child(1),
+.navigator-menu.open .hamburger-bar:nth-child(3) {
+  width: calc(var(--bar-width) * 1.4); /* extend for cross */
+}
+
 .navigator-menu.open .hamburger-bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: translateY(calc(var(--bar-height) + var(--bar-gap))) rotate(45deg);
 }
 
 .navigator-menu.open .hamburger-bar:nth-child(2) {
@@ -198,7 +207,7 @@
 }
 
 .navigator-menu.open .hamburger-bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(calc(-1 * (var(--bar-height) + var(--bar-gap)))) rotate(-45deg);
 }
 
 /* ===== SIDEBAR ===== */
@@ -244,6 +253,13 @@
 
 .nav-item-highlight {
   background: rgba(236, 150, 13, 0.9);
+}
+
+.body-no-scroll {
+  overflow: hidden;
+  touch-action: none; /* optional for mobile smoothness */
+  position: fixed;
+  width: 100%;
 }
 
 /* Overlay */

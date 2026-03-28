@@ -24,43 +24,67 @@ export default function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  useEffect(() => {
-    const nav = navRef.current;
-    const header = headerRef.current;
+  // --- 1️⃣ Scroll & header/nav fixed ---
+useEffect(() => {
+  const nav = navRef.current;
+  const header = headerRef.current;
 
-    const measure = () => {
-      if (nav) setNavHeight(nav.offsetHeight);
-      if (header) setHeaderHeight(header.offsetHeight);
-    };
+  const measure = () => {
+    if (nav) setNavHeight(nav.offsetHeight);
+    if (header) setHeaderHeight(header.offsetHeight);
+  };
 
-    measure();
+  measure();
 
-    const ro = new ResizeObserver(measure);
-    if (nav) ro.observe(nav);
-    if (header) ro.observe(header);
+  const ro = new ResizeObserver(measure);
+  if (nav) ro.observe(nav);
+  if (header) ro.observe(header);
 
-    const onScroll = () => {
-      const scrollY = window.scrollY;
-      const isDesktop = window.innerWidth >= 992;
+  const onScroll = () => {
+    const scrollY = window.scrollY;
+    const isDesktop = window.innerWidth >= 992;
 
-      if (isDesktop) {
-        setNavFixed(scrollY > DESKTOP_THRESHOLD);
-        setHeaderFixed(false);
-      } else {
-        setHeaderFixed(scrollY > MOBILE_THRESHOLD);
-        setNavFixed(false);
-      }
-    };
+    if (isDesktop) {
+      setNavFixed(scrollY > DESKTOP_THRESHOLD);
+      setHeaderFixed(false);
+    } else {
+      setHeaderFixed(scrollY > MOBILE_THRESHOLD);
+      setNavFixed(false);
+    }
+  };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
 
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-      ro.disconnect();
-    };
-  }, []);
+  return () => {
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+    ro.disconnect();
+  };
+}, []); // empty dependency → runs only on mount
+
+// --- 2️⃣ Scroll lock when mobile menu opens ---
+useEffect(() => {
+  if (isMenuOpen) {
+    const scrollPos = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPos}px`;
+    document.body.style.width = '100%';
+  } else {
+    const top = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    if (top) window.scrollTo(0, -parseInt(top));
+  }
+
+  // Cleanup in case component unmounts while menu open
+  return () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+  };
+}, [isMenuOpen]);
 
   return (
     <>
