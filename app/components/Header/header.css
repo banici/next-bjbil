@@ -32,7 +32,7 @@
 }
 
 .header-logo-wrapper {
-  max-height: 10rem;
+  max-height: 14rem;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
 }
@@ -43,14 +43,14 @@
 }
 
 .header-logo-wrapper .container {
-  padding: 1.875rem 0 0;
+  padding: 1rem 0 0;
   display: flex;
   justify-content: center;
 }
 
 /* ===== LOGO ===== */
 .logo img {
-  width: 22rem;
+  width: 29rem;
   max-width: 100%;
   height: auto;
 }
@@ -117,7 +117,8 @@
 }
 
 .sf-menu a {
-  display: block;
+  display: inline-block;
+  position: relative;
   padding: 1rem 0.9375rem;
   color: #fff;
   text-decoration: none;

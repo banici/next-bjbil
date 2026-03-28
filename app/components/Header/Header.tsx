@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import './header.css';
 
-const DESKTOP_THRESHOLD = 206;
+const DESKTOP_THRESHOLD = 256;
 const MOBILE_THRESHOLD = 55;
 
 export default function Header() {
@@ -191,22 +191,22 @@ useEffect(() => {
                     <Link href="/" aria-current={pathname === '/' ? 'page' : undefined}>Hem</Link>
                   </li>
                   <li>
-                    <Link href="/car-makes">Våra bilmärken</Link>
+                    <Link href="/car-makes" aria-current={pathname === '/car-makes' ? 'page' : undefined}>Våra bilmärken</Link>
                   </li>
                   <li>
-                    <Link href="/services">Våra tjänster</Link>
+                    <Link href="/services" aria-current={pathname === '/services' ? 'page' : undefined}>Våra tjänster</Link>
                   </li>
                   <li>
-                    <Link href="/tire-hotel">Däckhotell</Link>
+                    <Link href="/tire-hotel" aria-current={pathname === '/tire-hotel' ? 'page' : undefined}>Däckhotell</Link>
                   </li>
                   <li>
-                    <Link href="/about">Om oss</Link>
+                    <Link href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>Om oss</Link>
                   </li>
                   <li>
-                    <Link href="/contact">Kundservice</Link>
+                    <Link href="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Kundservice</Link>
                   </li>
                   <li className="nav-cta">
-                    <Link href="/booking">Serviceförfrågan</Link>
+                    <Link href="/booking" aria-current={pathname === '/booking' ? 'page' : undefined}>Serviceförfrågan</Link>
                   </li>
                 </ul>
               </nav>
