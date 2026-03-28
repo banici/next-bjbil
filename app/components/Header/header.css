@@ -157,7 +157,8 @@
 }
 
 .nav-cta a:hover {
-  background-color: #d4850b;
+  background-color: #b16e0a;
+  color: white;
 }
 
 /* ===== MOBILE NAV ===== */
