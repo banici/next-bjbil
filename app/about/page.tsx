@@ -32,14 +32,13 @@ export default function OmOssPage() {
         </div>
         <div className="om-oss-image-wrapper">
           <Image
-            src="/images/personal/grupp-foto.jpeg"
+            src="/images/personal/grupp-foto-mobile.jpg"
             alt="Teamet på Bo & Jimmy Bilservice AB"
-            width={1200}
+            width={600}
             height={600}
             quality={85}
             priority
-            loading='eager'
-            className="om-oss-team-img"
+            className="om-oss-team-img mobile-only"
           />
         </div>
       </section>
