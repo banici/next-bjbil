@@ -21,6 +21,16 @@ export default function TjansterPage() {
   return (
     <>
     <div className='services-bg-wrapper'>
+      {/* Background image */}
+      <Image
+        src="/images/service-banner/service-background.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        quality={90}
+        style={{ objectFit: 'cover' }}
+      />
       {/* Hero */}
       <section className="tjanster-hero" aria-labelledby="tjanster-heading">
         <div className="tjanster-hero-inner">

@@ -1,9 +1,37 @@
+/* ===== BACKGROUND WRAPPER (UPDATED FOR NEXT IMAGE) ===== */
 .services-bg-wrapper {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.23)),
-    url('/images/service-banner/service-background.png') center / cover no-repeat;
-  background-attachment: fixed; /* optional: parallax effect */
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--bjbil-blue);
 }
+
+/* Next.js <Image fill /> */
+.services-bg-wrapper img {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Overlay gradient (replaces old background gradient) */
+.services-bg-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.22),
+    rgba(0, 0, 0, 0.23)
+  );
+  z-index: 1;
+}
+
+/* Ensure all content sits above background */
+.services-bg-wrapper > * {
+  position: relative;
+  z-index: 2;
+}
+
 
 /* ===== TJANSTER HERO ===== */
 .tjanster-hero {
@@ -32,6 +60,7 @@
   line-height: 1.7;
   margin: 0;
 }
+
 
 /* ===== SERVICE GRID ===== */
 .tjanster-grid-section {
@@ -106,6 +135,7 @@
   text-align: center;
 }
 
+
 /* ===== SERVICE PAGE HERO ===== */
 .svc-hero {
   background-color: #fff;
@@ -156,6 +186,7 @@
   line-height: 1.6;
 }
 
+
 /* ===== SERVICE PAGE CONTENT ===== */
 .svc-content-section {
   background-color: #f5f5f5;
@@ -195,9 +226,10 @@
   object-fit: cover;
 }
 
+
 /* ===== CTA ===== */
 .svc-cta {
-  grid-column: 1 / -1; /* spans both columns on desktop */
+  grid-column: 1 / -1;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -250,15 +282,6 @@
   border-radius: 0.25rem;
 }
 
-.svc-content-inner {
-  max-width: 72rem;
-  margin: 0 auto 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
 .svc-img-mobile {
   display: none;
 }
@@ -266,6 +289,7 @@
 .svc-img-desktop {
   display: block;
 }
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 62rem) {
@@ -277,7 +301,7 @@
 @media (max-width: 48rem) {
   .svc-content-inner {
     grid-template-columns: 1fr;
-    gap: 1rem; 
+    gap: 1rem;
     display: flex;
     flex-direction: column;
   }
@@ -303,7 +327,6 @@
     padding: 1.5rem 1rem 4rem;
   }
 
-  @media (max-width: 48rem) {
   .tjanster-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
@@ -316,12 +339,9 @@
   }
 
   .tjanster-card-img-wrapper {
-    position: absolute;
-    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
 
   .tjanster-card-img {
@@ -329,25 +349,14 @@
   }
 
   .tjanster-card h2 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
     padding: 0.75rem;
     font-size: 1.3rem;
     width: 100%;
   }
-
-    .tjanster-bg-wrapper {
-    background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.23)),
-      url('/images/service-banner/service-background.png') center / contain no-repeat;
-    background-color: var(--bjbil-blue); /* fills the gaps around the image */
-    background-attachment: scroll;
-  }
-}
 }
 
+
+/* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
   .tjanster-card,
   .tjanster-card-img,
