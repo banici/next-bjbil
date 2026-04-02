@@ -343,6 +343,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.23)),
       url('/images/service-banner/service-background.png') center / contain no-repeat;
     background-color: var(--bjbil-blue); /* fills the gaps around the image */
+    background-attachment: scroll;
   }
 }
 }

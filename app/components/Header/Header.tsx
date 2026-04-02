@@ -130,7 +130,7 @@ useEffect(() => {
               <li>
                 <Link href="/services" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">⚙️</span>
-                  Våra tjänster
+                  Tjänster
                 </Link>
               </li>
               <li>
@@ -194,7 +194,7 @@ useEffect(() => {
                     <Link href="/car-makes" aria-current={pathname === '/car-makes' ? 'page' : undefined}>Våra bilmärken</Link>
                   </li>
                   <li>
-                    <Link href="/services" aria-current={pathname === '/services' ? 'page' : undefined}>Våra tjänster</Link>
+                    <Link href="/services" aria-current={pathname === '/services' ? 'page' : undefined}>Tjänster</Link>
                   </li>
                   <li>
                     <Link href="/tire-hotel" aria-current={pathname === '/tire-hotel' ? 'page' : undefined}>Däckhotell</Link>

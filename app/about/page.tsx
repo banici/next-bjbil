@@ -36,7 +36,7 @@ export default function OmOssPage() {
             alt="Teamet på Bo & Jimmy Bilservice AB"
             width={600}
             height={600}
-            quality={85}
+            quality={100}
             priority
             className="om-oss-team-img mobile-only"
           />
