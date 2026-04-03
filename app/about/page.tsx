@@ -34,11 +34,12 @@ export default function OmOssPage() {
           <Image
             src="/images/personal/grupp-foto-mobile.jpg"
             alt="Teamet på Bo & Jimmy Bilservice AB"
-            width={600}
-            height={600}
-            quality={100}
+            width={1200}
+            height={800}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75rem, 75rem"
+            quality={90}
             priority
-            className="om-oss-team-img mobile-only"
+            className="om-oss-team-img"
           />
         </div>
       </section>

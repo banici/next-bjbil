@@ -27,7 +27,7 @@ export default function TjansterPage() {
         alt=""
         fill
         priority
-        sizes="100vw"
+        sizes="(max-width: 768px) 150vw, (max-width: 1200px) 125vw, 100vw"
         quality={90}
         style={{ objectFit: 'cover' }}
       />
