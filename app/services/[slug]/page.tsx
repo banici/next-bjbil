@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: Props) {
         src={service.imageSrc}
         alt={service.imageAlt}
         fill
-        sizes="100vw"
+        sizes="(max-width: 768px) 150vw, (max-width: 1200px) 125vw, 100vw"
         className="svc-img"
         quality={90}
         priority
