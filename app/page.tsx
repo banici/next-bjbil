@@ -1,9 +1,45 @@
+import type { Metadata } from 'next';
 import VideoHero from './components/VideoHero/VideoHero';
 import Link from 'next/link';
 import './page.css';
 import PresentationBoxes from './components/PresentationBoxes/PresentationBoxes';
 import { presentationBoxes } from './components/PresentationBoxes/PresentationUtil';
 import StickyDack from './components/StickyDack/StickyDack';
+
+// ---------------------------------------------------------------------------
+// The title here intentionally omits the template suffix because the homepage
+// title should stand alone. We use `title.absolute` to bypass the layout template.
+// ---------------------------------------------------------------------------
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "Bilverkstad Mölndal – BMW, MINI, Tesla & VAG | Bo & Jimmy Bilservice AB",
+  },
+  description:
+    "Bo & Jimmy Bilservice AB – specialiserad bilverkstad i Mölndal sedan 1982. Vi servar BMW, MINI, Tesla och VAG. Över 40 års erfarenhet, garanti på allt arbete. Ring 031-84 75 29.",
+  keywords: [
+    "bilverkstad Mölndal",
+    "bilverkstad Göteborg",
+    "BMW service Mölndal",
+    "MINI service",
+    "Tesla service",
+    "VAG service",
+    "Alpina service",
+    "elbilsverkstad Göteborg",
+    "däckhotell Mölndal",
+    "Bo Jimmy Bilservice",
+  ],
+  alternates: {
+    canonical: "https://bjbil.se",
+  },
+  openGraph: {
+    title: "Bo & Jimmy Bilservice AB – Bilverkstad i Mölndal sedan 1982",
+    description:
+      "Specialiserad verkstad för BMW, MINI, Tesla och VAG. Över 40 års erfarenhet. Boka service eller reparation i Mölndal.",
+    url: "https://bjbil.se",
+    // images: [{ url: "/images/og-default.jpg", width: 1200, height: 630 }],
+  },
+};
 
 export default function HomePage() {
   return (
@@ -20,33 +56,30 @@ export default function HomePage() {
       {/* Welcome Section */}
       <section className="page-section" id="page-section">
         <StickyDack />
-          <div className="index-welcome-container">
-            <div id="index-welcome-title">
-              <h1>Välkommen till</h1>
-            </div>
-            <h2 id="index-title-name">
-              Bo & Jimmy
-            </h2>
-            <h2 id="index-title-name">
-              Bilservice AB
-            </h2>
-            <p id="main-title-undertext">
-              Vi har servat bilar i över 40 år - med kvalitet, erfarenhet och omtanke.
-            </p>
-            <br />
-            <br />
-            <p id="index-intro-description">
-              Bo & Jimmy's Bilservice är en specialiserad bilverkstad med över 40 års 
-              erfarenhet av service och reparationer, inriktade på BMW, MINI, TESLA och VAG. 
-              Vi erbjuder ett brett utbud av tjänster, inklusive service och reparation av bilar, 
-              styling och tuning för att optimera prestanda, samt däckhotell för att säkra däck 
-              under säsongsbyte. Dessutom har vi en omfattande reservdelsförsäljning med ett stort 
-              lager av både nya och begagnade delar, inklusive tillbehör för trimning och styling. 
-              Vårt fokus på kvalitet och kundnöjdhet gör oss till det självklara valet för bilägare 
-              som söker expertis och pålitlighet. Besök oss i Mölndal för att uppleva skillnaden!
-            </p>
+        <div className="index-welcome-container">
+          <div id="index-welcome-title">
+            <h1>Välkommen till</h1>
           </div>
+          <h2 id="index-title-name">Bo & Jimmy</h2>
+          <h2 id="index-title-name">Bilservice AB</h2>
+          <p id="main-title-undertext">
+            Vi har servat bilar i över 40 år - med kvalitet, erfarenhet och omtanke.
+          </p>
+          <br />
+          <br />
+          <p id="index-intro-description">
+            Bo & Jimmy's Bilservice är en specialiserad bilverkstad med över 40 års erfarenhet av
+            service och reparationer, inriktade på BMW, MINI, TESLA och VAG. Vi erbjuder ett brett
+            utbud av tjänster, inklusive service och reparation av bilar, styling och tuning för att
+            optimera prestanda, samt däckhotell för att säkra däck under säsongsbyte. Dessutom har
+            vi en omfattande reservdelsförsäljning med ett stort lager av både nya och begagnade
+            delar, inklusive tillbehör för trimning och styling. Vårt fokus på kvalitet och
+            kundnöjdhet gör oss till det självklara valet för bilägare som söker expertis och
+            pålitlighet. Besök oss i Mölndal för att uppleva skillnaden!
+          </p>
+        </div>
       </section>
+
       {presentationBoxes.map((box, index) => (
         <PresentationBoxes
           key={index}
@@ -55,7 +88,7 @@ export default function HomePage() {
           mirrorImage={box.mirrorImage}
         />
       ))}
-               
+
       {/* Car Makes Section */}
       <section className="page-section" id="carmake-section">
         <div className="carmake-container">
@@ -64,8 +97,8 @@ export default function HomePage() {
           <div className="car-btn-bread-wrapper">
             <div className="car-btn-bread-box">
               <p id="car-btn-bread">
-                Vi är en fristående verkstad och specialiserar oss på flera välkända bilmärken. 
-                Vi använder alltid reservdelar och utrustning som uppfyller eller motsvarar 
+                Vi är en fristående verkstad och specialiserar oss på flera välkända bilmärken. Vi
+                använder alltid reservdelar och utrustning som uppfyller eller motsvarar
                 originalstandard. Det ger dig trygghet, kvalitet och bibehållet andrahandsvärde.
               </p>
             </div>
@@ -83,25 +116,29 @@ export default function HomePage() {
           <div className="oil-wrapper">
             <div className="oil-title-container">
               <h2 className="post-title" id="oil-title">
-                <strong><br />Kvalitetsolja till din bil</strong>
+                <strong>
+                  <br />
+                  Kvalitetsolja till din bil
+                </strong>
               </h2>
               <div id="oil-title-line" aria-hidden="true"></div>
               <br />
             </div>
             <p>
-              Vi använder MOTUL och OE motorolja – oljor av hög kvalitet som är anpassade för 
-              just din bil. Du kan även köpa dessa i konsumentförpackningar om du vill fylla 
-              på själv mellan servicetillfällena.
+              Vi använder MOTUL och OE motorolja – oljor av hög kvalitet som är anpassade för just
+              din bil. Du kan även köpa dessa i konsumentförpackningar om du vill fylla på själv
+              mellan servicetillfällena.
             </p>
             <p>
-              Behöver du service, reparation, reservdelar till din BMW-MINI-TESLA eller VAG 
-              är du välkommen till oss!
+              Behöver du service, reparation, reservdelar till din BMW-MINI-TESLA eller VAG är du
+              välkommen till oss!
             </p>
             <br />
             <p>
-              Vi finns i Göteborg, Mölndal.<br />
-              Kontakta oss – vi hjälper dig gärna med service, reparation eller reservdelar 
-              till din bil.
+              Vi finns i Göteborg, Mölndal.
+              <br />
+              Kontakta oss – vi hjälper dig gärna med service, reparation eller reservdelar till din
+              bil.
             </p>
           </div>
         </div>
