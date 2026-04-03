@@ -46,6 +46,7 @@
   padding: 1rem 0 0;
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 
 /* ===== LOGO ===== */
