@@ -1,17 +1,28 @@
 import type { Metadata } from 'next';
 import CarMakes from '../components/CarMakeSelection/CarMakeSelection';
-
+ 
 export const metadata: Metadata = {
-  title: 'Våra bilmärken – Bo & Jimmy Bilservice AB',
-  description: 'Specialiserad service för BMW, MINI, Tesla och VAG i Mölndal. Över 40 års erfarenhet av tyska och elektriska bilar.',
-  keywords: ['BMW service', 'MINI service', 'Tesla service', 'VAG service', 'Audi RS', 'Alpina', 'bilverkstad Mölndal'],
+  title: 'Våra bilmärken – BMW, MINI, Tesla & VAG',
+  description:
+    'Specialiserad service för BMW, MINI, Tesla, Audi, VW och Seat i Mölndal. Fristående verkstad med över 40 års erfarenhet – vi jobbar enligt tillverkarstandard.',
+  keywords: [
+    'BMW service Mölndal',
+    'MINI service',
+    'Tesla service Göteborg',
+    'Alpina service',
+    'Elbilservice',
+    'VAG verkstad',
+    'Alpina service',
+    'fristående BMW verkstad',
+  ],
+  alternates: {
+    canonical: 'https://bjbil.se/car-makes',
+  },
   openGraph: {
-    title: 'Våra bilmärken – Bo & Jimmy Bilservice',
-    description: 'Specialiserad service för BMW, MINI, Tesla och VAG i Mölndal.',
+    title: 'Våra bilmärken – BMW, MINI, Tesla & VAG | Bo & Jimmy Bilservice',
+    description:
+      'Specialiserad service för BMW, MINI, Tesla och VAG i Mölndal. Fristående verkstad – jobbar enligt tillverkarstandard.',
     url: 'https://bjbil.se/car-makes',
-    siteName: 'Bo & Jimmy Bilservice',
-    locale: 'sv_SE',
-    type: 'website',
   },
 };
 
