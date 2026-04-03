@@ -2,17 +2,27 @@ import type { Metadata } from 'next';
 import BookingForm from '../components/BookingForm/BookingForm';
 
 export const metadata: Metadata = {
-  title: 'Serviceförfrågan – Bo & Jimmy Bilservice AB',
-  description: 'Skicka en serviceförfrågan till Bo & Jimmy Bilservice i Mölndal. Vi kontaktar dig med lediga tider för service, reparation eller däckbyte.',
-  keywords: ['serviceförfrågan', 'boka service', 'bilservice Mölndal', 'BMW service', 'MINI service'],
-  openGraph: {
-    title: 'Serviceförfrågan – Bo & Jimmy Bilservice',
-    description: 'Skicka en förfrågan så kontaktar vi dig med lediga tider.',
-    url: 'https://bjbil.se/booking',
-    siteName: 'Bo & Jimmy Bilservice',
-    locale: 'sv_SE',
-    type: 'website',
+  title: 'Skicka serviceförfrågan',
+  description:
+    'Skicka en serviceförfrågan till Bo & Jimmy Bilservice i Mölndal. Vi återkommer med lediga tider normalt inom en arbetsdag. Service, reparation, däckbyte och mer.',
+  keywords: [
+    'boka bilservice Mölndal',
+    'serviceförfrågan',
+    'boka BMW service',
+    'boka MINI service',
+    'bilverkstad tider',
+  ],
+  alternates: {
+    canonical: 'https://bjbil.se/booking',
   },
+  openGraph: {
+    title: 'Serviceförfrågan – Bo & Jimmy Bilservice AB',
+    description: 'Fyll i formuläret så kontaktar vi dig med lediga tider inom en arbetsdag.',
+    url: 'https://bjbil.se/booking',
+  },
+  // Booking pages shouldn't be indexed by search engines – they're transactional
+  // and add no crawlable SEO value. Remove this if you prefer them indexed.
+  // robots: { index: false, follow: false },
 };
 
 export default function BokaPage() {
