@@ -111,7 +111,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://www.motormagasinet.se/godkand-bilverkstad"  
+            href="https://www.godkandbilverkstad.se/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Läs mer om Godkänd Bilverkstad (öppnas i nytt fönster)"

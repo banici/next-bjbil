@@ -166,6 +166,7 @@ useEffect(() => {
                     alt="Bo & Jimmy Bilservice logotyp"
                     width={280}
                     height={80}
+                    loading="eager"
                   />
                 </Link>
               </div>
