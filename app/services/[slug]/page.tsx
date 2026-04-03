@@ -32,6 +32,8 @@ export default async function ServicePage({ params }: Props) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
+  const isVatgasRengoring = service.slug === 'vatgas-rengoring';
+
   const paragraphs = service.description
     .split('\n\n')
     .map((p: string) => p.trim())
@@ -57,7 +59,7 @@ export default async function ServicePage({ params }: Props) {
   <div className="svc-content-inner">
 
     {/* Mobile-only image (top) */}
-    <div className="svc-img-wrapper svc-img-mobile">
+    <div className={`svc-img-wrapper svc-img-mobile ${isVatgasRengoring ? 'svc-img-vatgas-mobile' : ''}`}>
       <Image
         src={service.imageSrc}
         alt={service.imageAlt}
@@ -77,7 +79,7 @@ export default async function ServicePage({ params }: Props) {
     </div>
 
     {/* Desktop-only image (right column) */}
-    <div className="svc-img-wrapper svc-img-desktop">
+    <div className={`svc-img-wrapper svc-img-desktop ${isVatgasRengoring ? 'svc-img-vatgas-desktop' : ''}`}>
       <Image
         src={service.imageSrc}
         alt={service.imageAlt}

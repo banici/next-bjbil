@@ -290,6 +290,19 @@
   display: block;
 }
 
+/* vatgas-rengoring + custom image size */
+.svc-img-vatgas-mobile {
+  height: 550px;
+  max-height: 550px;
+}
+
+.svc-img-vatgas-desktop {
+  width: 450px;
+  height: 650px;
+  max-width: 450px;
+  max-height: 650px;
+}
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 62rem) {
