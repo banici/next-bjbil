@@ -1,19 +1,32 @@
+// =============================================================================
+// app/tire-hotel/page.tsx
+// =============================================================================
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import './tire-hotel.css';
 
-// app/tire-hotel/page.tsx
 export const metadata: Metadata = {
-  title: 'Däckhotell Mölndal – Förvaring av däck | Bo & Jimmy Bilservice',
-  description: 'Förvara dina däck tryggt hos oss i Mölndal. 1 699 kr/säsong inkl. hjultvätt och däckbyte. Ring 031-84 75 29.',
+  title: 'Däckhotell Mölndal – Säker säsongsförvaring av däck',
+  description:
+    'Förvara dina däck tryggt hos Bo & Jimmy Bilservice i Mölndal. 1 699 kr/säsong inkluderar hjultvätt och däckbyte. Larmade lokaler. Ring 031-84 75 29 eller skicka en förfrågan.',
+  keywords: [
+    'däckhotell Mölndal',
+    'däckhotell Göteborg',
+    'däckförvaring',
+    'säsongsförvaring däck',
+    'däckbyte Mölndal',
+    'sommardäck förvaring',
+    'vinterdäck förvaring',
+  ],
+  alternates: {
+    canonical: 'https://bjbil.se/tire-hotel',
+  },
   openGraph: {
-    title: 'Däckhotell – Bo & Jimmy Bilservice',
-    description: 'Säker däckförvaring i Mölndal från 1 699 kr/säsong.',
+    title: 'Däckhotell Mölndal – Bo & Jimmy Bilservice AB',
+    description:
+      'Säker däckförvaring i Mölndal från 1 699 kr/säsong inkl. hjultvätt och däckbyte. Larmade lokaler.',
     url: 'https://bjbil.se/tire-hotel',
-    siteName: 'Bo & Jimmy Bilservice',
-    locale: 'sv_SE',
-    type: 'website',
   },
 };
 
@@ -21,22 +34,26 @@ const steps = [
   {
     img: '/images/tire-hotel/dack-byte.png',
     title: 'Däckbyte',
-    description: 'Vi börjar med att byta dina däck inför säsongen så att du kör tryggt och lagligt.',
+    description:
+      'Vi börjar med att byta dina däck inför säsongen så att du kör tryggt och lagligt.',
   },
   {
     img: '/images/tire-hotel/dack-tvatt.png',
     title: 'Tvätt av däck & fälgar',
-    description: 'Efter bytet rengör vi dina gamla däck och fälgar noggrant, så de är fräscha inför förvaring.',
+    description:
+      'Efter bytet rengör vi dina gamla däck och fälgar noggrant, så de är fräscha inför förvaring.',
   },
   {
     img: '/images/tire-hotel/dack-lager.png',
     title: 'Säker förvaring',
-    description: 'Dina däck placeras i vårt låsta och torra förvaringsutrymme där de lagras skonsamt och tryggt.',
+    description:
+      'Dina däck placeras i vårt låsta och torra förvaringsutrymme där de lagras skonsamt och tryggt.',
   },
   {
     img: '/images/tire-hotel/dack-byte.png',
     title: 'Nytt däckskifte nästa säsong',
-    description: 'När det är dags för nästa säsong hämtar vi fram dina däck igen och utför ett nytt däckbyte – snabbt och smidigt.',
+    description:
+      'När det är dags för nästa säsong hämtar vi fram dina däck igen och utför ett nytt däckbyte – snabbt och smidigt.',
   },
 ];
 
@@ -102,8 +119,8 @@ export default function DackhotellPage() {
               däck och fälgar innan förvaring, så att de är rena och klara vid montering.
             </p>
             <p className="dack-price">
-              Pris: <strong>1 699 kr</strong> per säsong (inkl. hjultvätt och förvaring).
-              En enkel och bekväm lösning för dig och din bil.
+              Pris: <strong>1 699 kr</strong> per säsong (inkl. hjultvätt och förvaring). En enkel
+              och bekväm lösning för dig och din bil.
             </p>
           </div>
         </div>
@@ -111,7 +128,9 @@ export default function DackhotellPage() {
 
       {/* Steps Section */}
       <section className="dack-steps-section" aria-labelledby="dack-steps-heading">
-        <h2 id="dack-steps-heading" className="dack-steps-title">Så här fungerar det</h2>
+        <h2 id="dack-steps-heading" className="dack-steps-title">
+          Så här fungerar det
+        </h2>
         <ol className="four-boxes" role="list">
           {steps.map((step, index) => (
             <li key={index} className="dack-box">
