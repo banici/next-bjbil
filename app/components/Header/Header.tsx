@@ -63,28 +63,20 @@ useEffect(() => {
   };
 }, []); // empty dependency → runs only on mount
 
-// --- 2️⃣ Scroll lock when mobile menu opens ---
-useEffect(() => {
-  if (isMenuOpen) {
-    const scrollPos = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollPos}px`;
-    document.body.style.width = '100%';
-  } else {
-    const top = document.body.style.top;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    if (top) window.scrollTo(0, -parseInt(top));
-  }
+  // --- 2️⃣ Prevent body scroll on mobile when menu is open ---
+  useEffect(() => {
+    const isMobile = window.innerWidth < 992;
+    if (isMenuOpen && isMobile) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
 
-  // Cleanup in case component unmounts while menu open
-  return () => {
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-  };
-}, [isMenuOpen]);
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <>

@@ -180,8 +180,8 @@
   padding: 0.5rem;
   background: transparent;
   border: none;
-  z-index: 1004; /* above nav-sidebar */
-  justify-content: center;  /* vertical centering */
+  z-index: 1004;
+  justify-content: center;
   align-items: center; 
 }
 
@@ -193,13 +193,13 @@
   background-color: #fff;
   border-radius: 0.125rem;
   transition: transform var(--animation-timing), opacity var(--animation-timing), width var(--animation-timing);
-  transform-origin: center; /* important */
+  transform-origin: center;
 }
 
 /* Hamburger → X */
 .navigator-menu.open .hamburger-bar:nth-child(1),
 .navigator-menu.open .hamburger-bar:nth-child(3) {
-  width: calc(var(--bar-width) * 1.4); /* extend for cross */
+  width: calc(var(--bar-width) * 1.4);
 }
 
 .navigator-menu.open .hamburger-bar:nth-child(1) {
@@ -261,7 +261,7 @@
 
 .body-no-scroll {
   overflow: hidden;
-  touch-action: none; /* optional for mobile smoothness */
+  touch-action: none;
   position: fixed;
   width: 100%;
 }
