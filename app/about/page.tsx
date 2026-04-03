@@ -4,16 +4,26 @@ import Link from 'next/link';
 import './about.css';
 
 export const metadata: Metadata = {
-  title: 'Om oss – Bo & Jimmy Bilservice AB | Sedan 1982',
-  description: 'Lär känna teamet bakom Bo & Jimmy Bilservice i Mölndal. Över 40 års erfarenhet av BMW, MINI, TESLA och VAG. Familjeföretag grundat 1982.',
-  keywords: ['om oss', 'bilverkstad Mölndal', 'BMW verkstad', 'erfarenhet', 'Bo Jimmy Bilservice'],
+  title: 'Om oss – Familjeföretag sedan 1982',
+  description:
+    'Lär känna teamet bakom Bo & Jimmy Bilservice i Mölndal. Familjeföretag grundat 1982 med över 40 års erfarenhet av BMW, MINI, Tesla och VAG. Personlig service, transparens och garanti på allt arbete.',
+  keywords: [
+    'om oss',
+    'bilverkstad Mölndal',
+    'BMW verkstad',
+    'familjeföretag bilverkstad',
+    'Bo Jimmy Bilservice historia',
+    'bilverkstad sedan 1982',
+  ],
+  alternates: {
+    canonical: 'https://bjbil.se/about',
+  },
   openGraph: {
-    title: 'Om oss – Bo & Jimmy Bilservice AB',
-    description: 'Familjeföretag med över 40 års erfarenhet av bilservice i Mölndal.',
+    title: 'Om oss – Bo & Jimmy Bilservice AB | Familjeföretag sedan 1982',
+    description:
+      'Familjeföretag med över 40 års erfarenhet av bilservice i Mölndal. Träffa teamet bakom verkstaden.',
     url: 'https://bjbil.se/about',
-    siteName: 'Bo & Jimmy Bilservice',
-    locale: 'sv_SE',
-    type: 'website',
+    // images: [{ url: '/images/personal/grupp-foto-mobile.jpg', width: 1200, height: 630 }],
   },
 };
 
@@ -27,7 +37,8 @@ export default function OmOssPage() {
             Erfarenhet, kvalitet &amp; trygghet sedan 1982
           </h1>
           <p className="om-oss-upper-subtitle">
-            Vi är ett familjärt företag som servat bilar sedan 1982. Här är teamet som möter dig i verkstaden.
+            Vi är ett familjärt företag som servat bilar sedan 1982. Här är teamet som möter dig i
+            verkstaden.
           </p>
         </div>
         <div className="om-oss-image-wrapper">
@@ -47,29 +58,31 @@ export default function OmOssPage() {
       {/* About Section */}
       <section className="om-oss-intro-section" aria-labelledby="om-oss-intro-heading">
         <div className="om-oss-intro-inner">
-          <h2 id="om-oss-intro-heading" className="om-oss-image-title">Om oss</h2>
+          <h2 id="om-oss-intro-heading" className="om-oss-image-title">
+            Om oss
+          </h2>
           <div className="om-oss-title-line" aria-hidden="true" />
           <div className="om-oss-intro-text">
             <p>
               Bo &amp; Jimmy Bilservice AB grundades 1982 under namnet BO Bilar och har sedan dess
-              utvecklats till en väletablerad och ledande aktör inom bilservice och reparationer.
-              År 1991 bildade grundarna Bo och Jimmy Bayerische Bilservice, som blev aktiebolag 2003.
+              utvecklats till en väletablerad och ledande aktör inom bilservice och reparationer. År
+              1991 bildade grundarna Bo och Jimmy Bayerische Bilservice, som blev aktiebolag 2003.
               Sedan 2005 har vi drivits vidare under namnet Bo &amp; Jimmy Bilservice AB.
             </p>
             <p>
-              Vi är idag en verkstad med över 40 års erfarenhet och starka traditioner, specialiserad
-              på service och reparation av BMW, MINI, Tesla och VAG. Vi följer alltid tillverkarnas
-              normer och krav för att säkerställa att varje arbete utförs fackmässigt och enligt
-              branschstandard. Genom åren har vi byggt upp ett omfattande lager av både nya och
-              begagnade reservdelar – särskilt till BMW – vilket gör att vi kan erbjuda snabba och
-              kostnadseffektiva lösningar.
+              Vi är idag en verkstad med över 40 års erfarenhet och starka traditioner,
+              specialiserad på service och reparation av BMW, MINI, Tesla och VAG. Vi följer alltid
+              tillverkarnas normer och krav för att säkerställa att varje arbete utförs fackmässigt
+              och enligt branschstandard. Genom åren har vi byggt upp ett omfattande lager av både
+              nya och begagnade reservdelar – särskilt till BMW – vilket gör att vi kan erbjuda
+              snabba och kostnadseffektiva lösningar.
             </p>
             <p>
-              Vi arbetar kontinuerligt med att utveckla vår kompetens, utrustning och diagnostik
-              för att ligga i takt med den tekniska utvecklingen. Det gör att vi kan utföra arbeten
-              tidseffektivt, noggrant och med hög precision. Välkommen till Bo &amp; Jimmy Bilservice AB
-              – en trygg och erfaren verkstad där både du och din bil tas om hand på ett professionellt
-              och kunnigt sätt.
+              Vi arbetar kontinuerligt med att utveckla vår kompetens, utrustning och diagnostik för
+              att ligga i takt med den tekniska utvecklingen. Det gör att vi kan utföra arbeten
+              tidseffektivt, noggrant och med hög precision. Välkommen till Bo &amp; Jimmy
+              Bilservice AB – en trygg och erfaren verkstad där både du och din bil tas om hand på
+              ett professionellt och kunnigt sätt.
             </p>
           </div>
         </div>
@@ -100,7 +113,9 @@ export default function OmOssPage() {
       {/* Nostalgi Card Section */}
       <section className="om-oss-cards-section" aria-labelledby="om-oss-cards-heading">
         <div className="om-oss-cards-inner">
-          <h2 id="om-oss-cards-heading" className="om-oss-cards-title">Nostalgialbum</h2>
+          <h2 id="om-oss-cards-heading" className="om-oss-cards-title">
+            Nostalgialbum
+          </h2>
           <p className="om-oss-cards-subtitle">
             Ta gärna en titt i vårt nostalgialbum där vi samlat utvalda ögonblick och
             verkstadsbilder från våra över 40 år i branschen.
@@ -120,8 +135,8 @@ export default function OmOssPage() {
               <div className="card-info">
                 <h3>Vår historia i bilder</h3>
                 <p>
-                  Utvalda ögonblick och verkstadsbilder från våra över 40 år i branschen.
-                  En resa genom tid, teknik och passion för bilar.
+                  Utvalda ögonblick och verkstadsbilder från våra över 40 år i branschen. En resa
+                  genom tid, teknik och passion för bilar.
                 </p>
                 <Link href="/nostalgi" className="card-link">
                   Se albumet
