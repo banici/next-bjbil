@@ -37,7 +37,7 @@ export default function TjansterPage() {
       <div className="services-bg-wrapper">
         {/* Background image */}
         <Image
-          src="/images/service-banner/service-background.png"
+          src="/images/service-banner/service-background-2.png"
           alt=""
           aria-hidden="true"
           fill
