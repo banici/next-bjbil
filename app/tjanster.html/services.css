@@ -291,11 +291,6 @@
 }
 
 /* vatgas-rengoring + custom image size */
-.svc-img-vatgas-mobile {
-  height: 550px;
-  max-height: 550px;
-}
-
 .svc-img-vatgas-desktop {
   width: 450px;
   height: 650px;
@@ -326,6 +321,17 @@
     border-radius: 0.75rem;
     overflow: hidden;
     width: 100%;
+  }
+
+  /* Preserve the full 1024 x 1536 infographic, including its heading. */
+  .svc-img-mobile.svc-img-vatgas-mobile {
+    aspect-ratio: 2 / 3;
+    height: auto;
+    max-height: none;
+  }
+
+  .svc-img-vatgas-mobile .svc-img {
+    object-fit: contain;
   }
 
   .svc-img-desktop {
