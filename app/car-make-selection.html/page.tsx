@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     'fristående BMW verkstad',
   ],
   alternates: {
-    canonical: 'https://bjbil.se/car-makes',
+    canonical: 'https://bjbil.se/car-make-selection.html',
   },
   openGraph: {
     title: 'Våra bilmärken – BMW, MINI, Tesla & VAG | Bo & Jimmy Bilservice',
     description:
       'Specialiserad service för BMW, MINI, Tesla och VAG i Mölndal. Fristående verkstad – jobbar enligt tillverkarstandard.',
-    url: 'https://bjbil.se/car-makes',
+    url: 'https://bjbil.se/car-make-selection.html',
   },
 };
 

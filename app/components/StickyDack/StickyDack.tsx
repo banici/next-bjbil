@@ -41,7 +41,7 @@ export default function StickyDack() {
 
   return (
     <div ref={stickyRef} className="sticky-dack">
-      <Link href="/tire-hotel">
+      <Link href="/dack-hotell.html">
         <Image
           src="/icons/dack-hotell.png"
           alt="Däckhotell - Säker förvaring av dina däck"

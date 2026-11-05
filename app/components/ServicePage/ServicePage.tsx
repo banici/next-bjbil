@@ -4,21 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   getServiceBySlug,
-  getAllServiceSlugs,
-} from '../../components/ServiceData/ServiceData';
-import '../services.css';
+} from '../ServiceData/ServiceData';
+import '../../tjanster.html/services.css';
 
 interface Props {
   params: Promise<{ slug: string }>;
-}
-
-// ---------------------------------------------------------------------------
-// Pre-render every service page at build time.
-// Without this, [slug] routes are server-rendered on demand — slower for users
-// and worse for crawl budget. Now each page is a static HTML file at build.
-// ---------------------------------------------------------------------------
-export function generateStaticParams() {
-  return getAllServiceSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,12 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: service.metaDescription,
     keywords: service.keywords,
     alternates: {
-      canonical: `https://bjbil.se/services/${service.slug}`,
+      canonical: `https://bjbil.se${service.path}`,
     },
     openGraph: {
       title: `${service.title} – Bo & Jimmy Bilservice AB`,
       description: service.metaDescription,
-      url: `https://bjbil.se/services/${service.slug}`,
+      url: `https://bjbil.se${service.path}`,
     },
   };
 }
@@ -59,7 +49,7 @@ export default async function ServicePage({ params }: Props) {
       <section className="svc-hero" aria-labelledby="svc-heading">
         <div className="svc-hero-inner">
           <nav className="svc-breadcrumb" aria-label="Brödsmulor">
-            <Link href="/services">Tjänster</Link>
+            <Link href="/tjanster.html">Tjänster</Link>
             <span aria-hidden="true"> / </span>
             <span aria-current="page">{service.title}</span>
           </nav>
@@ -125,7 +115,7 @@ export default async function ServicePage({ params }: Props) {
           <Link href="/booking" className="svc-btn-primary">
             Boka {service.title}
           </Link>
-          <Link href="/services" className="svc-btn-secondary">
+          <Link href="/tjanster.html" className="svc-btn-secondary">
             ← Alla tjänster
           </Link>
         </div>

@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     'bilverkstad Mölndal historia',
   ],
   alternates: {
-    canonical: 'https://bjbil.se/nostalgi',
+    canonical: 'https://bjbil.se/nostalgi-page.html',
   },
   openGraph: {
     title: 'Nostalgialbum – Bo & Jimmy Bilservice AB',
     description: 'Över 40 år av passion för bilar – i bilder från vår verkstad i Mölndal.',
-    url: 'https://bjbil.se/nostalgi',
+    url: 'https://bjbil.se/nostalgi-page.html',
   },
 };
 

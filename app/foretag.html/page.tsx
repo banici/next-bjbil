@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     'bilverkstad sedan 1982',
   ],
   alternates: {
-    canonical: 'https://bjbil.se/about',
+    canonical: 'https://bjbil.se/foretag.html',
   },
   openGraph: {
     title: 'Om oss – Bo & Jimmy Bilservice AB | Familjeföretag sedan 1982',
     description:
       'Familjeföretag med över 40 års erfarenhet av bilservice i Mölndal. Träffa teamet bakom verkstaden.',
-    url: 'https://bjbil.se/about',
+    url: 'https://bjbil.se/foretag.html',
     // images: [{ url: '/images/personal/grupp-foto-mobile.jpg', width: 1200, height: 630 }],
   },
 };
@@ -138,7 +138,7 @@ export default function OmOssPage() {
                   Utvalda ögonblick och verkstadsbilder från våra över 40 år i branschen. En resa
                   genom tid, teknik och passion för bilar.
                 </p>
-                <Link href="/nostalgi" className="card-link">
+                <Link href="/nostalgi-page.html" className="card-link">
                   Se albumet
                 </Link>
               </div>
@@ -152,7 +152,7 @@ export default function OmOssPage() {
         <h2 id="om-oss-cta-heading">Vill du veta mer eller boka service?</h2>
         <p>Vi välkomnar dig till vår verkstad i Mölndal.</p>
         <div className="om-oss-cta-buttons">
-          <Link href="/contact" className="om-oss-cta-primary">
+          <Link href="/kontakt.html" className="om-oss-cta-primary">
             Kontakta oss
           </Link>
           <Link href="/booking" className="om-oss-cta-secondary">

@@ -1,5 +1,6 @@
 export interface ServiceData {
   slug: string;
+  path: string;
   title: string;
   iconSrc: string;
   imageSrc: string;
@@ -13,6 +14,7 @@ export interface ServiceData {
 export const SERVICES: ServiceData[] = [
   {
     slug: 'service-underhall',
+    path: '/tjanster-service.html',
     title: 'Service & Underhåll',
     iconSrc: '/icons/services/ikon-service.png',
     imageSrc: '/images/service-banner/service-image-bjbil.jpg',
@@ -34,6 +36,7 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: 'fordonsdiagnos',
+    path: '/tjanster-motorlampa.html',
     title: 'Fordonsdiagnos',
     iconSrc: '/icons/services/ikon-diagnos.png',
     imageSrc: '/images/service-banner/service-diagnos-fordon.jpg',
@@ -54,6 +57,7 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: 'mjukvara',
+    path: '/tjanster-mjukvara.html',
     title: 'Mjukvara',
     iconSrc: '/icons/services/ikon-mjukvara.png',
     imageSrc: '/images/service-banner/service-high-voltage.jpg',
@@ -75,6 +79,7 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: 'elbilsverkstad',
+    path: '/tjanster-elbilsverkstad.html',
     title: 'Elbilsverkstad',
     iconSrc: '/icons/services/ikon-high-voltage.png',
     imageSrc: '/images/service-banner/service-high-voltage.jpg',
@@ -97,6 +102,7 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: 'ac-service',
+    path: '/tjanster-ac-service.html',
     title: 'AC Service',
     iconSrc: '/icons/services/ikon-ac.png',
     imageSrc: '/images/service-banner/service-ac-service.jpg',
@@ -117,6 +123,7 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: 'hjulinstallning-dack',
+    path: '/tjanster-missljud.html',
     title: 'Hjulinställning & Däck',
     iconSrc: '/icons/services/ikon-dack.png',
     imageSrc: '/images/service-banner/service-dack-missljud.jpg',
@@ -138,6 +145,7 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: 'vatgas-rengoring',
+    path: '/tjanster-hydrive.html',
     title: 'Vätgas Rengöring',
     iconSrc: '/icons/services/ikon-h2.png',
     imageSrc: '/images/service-banner/DPF-bild.jpg',
@@ -163,7 +171,8 @@ export function getServiceBySlug(slug: string): ServiceData | undefined {
   return SERVICES.find((s) => s.slug === slug);
 }
 
-// Used by generateStaticParams in app/services/[slug]/page.tsx to pre-render
+// Returns the service identifiers independently of their public URLs.
+// Previously used to pre-render
 // every service page at build time, improving crawlability and Core Web Vitals.
 export function getAllServiceSlugs(): string[] {
   return SERVICES.map((s) => s.slug);

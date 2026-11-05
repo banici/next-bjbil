@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     'Tesla service',
   ],
   alternates: {
-    canonical: 'https://bjbil.se/services',
+    canonical: 'https://bjbil.se/tjanster.html',
   },
   openGraph: {
     title: 'Våra tjänster – Bo & Jimmy Bilservice AB',
     description:
       'Service, diagnos, elbilsverkstad, AC, hjulinställning och mer – för BMW, MINI, Tesla och VAG i Mölndal.',
-    url: 'https://bjbil.se/services',
+    url: 'https://bjbil.se/tjanster.html',
   },
 };
 
@@ -64,7 +64,7 @@ export default function TjansterPage() {
             {SERVICES.map((service) => (
               <Link
                 key={service.slug}
-                href={`/services/${service.slug}`}
+                href={service.path}
                 className="tjanster-card"
                 aria-label={service.title}
               >

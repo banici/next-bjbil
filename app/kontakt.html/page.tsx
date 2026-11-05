@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     'Bo Jimmy Bilservice kontakt',
   ],
   alternates: {
-    canonical: 'https://bjbil.se/contact',
+    canonical: 'https://bjbil.se/kontakt.html',
   },
   openGraph: {
     title: 'Kundtjänst & Kontakt – Bo & Jimmy Bilservice AB',
     description:
       'Ring 031-84 75 29, maila eller besök oss på Aminogatan 15E i Mölndal. FAQ och garantiinfo.',
-    url: 'https://bjbil.se/contact',
+    url: 'https://bjbil.se/kontakt.html',
   },
 };
  

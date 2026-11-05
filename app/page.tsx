@@ -104,7 +104,7 @@ export default function HomePage() {
             </div>
           </div>
           <br />
-          <Link href="/car-makes" id="carmake-button">
+          <Link href="/car-make-selection.html" id="carmake-button">
             Våra bilmärken
           </Link>
         </div>

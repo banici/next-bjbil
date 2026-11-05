@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     'vinterdäck förvaring',
   ],
   alternates: {
-    canonical: 'https://bjbil.se/tire-hotel',
+    canonical: 'https://bjbil.se/dack-hotell.html',
   },
   openGraph: {
     title: 'Däckhotell Mölndal – Bo & Jimmy Bilservice AB',
     description:
       'Säker däckförvaring i Mölndal från 1 699 kr/säsong inkl. hjultvätt och däckbyte. Larmade lokaler.',
-    url: 'https://bjbil.se/tire-hotel',
+    url: 'https://bjbil.se/dack-hotell.html',
   },
 };
 
@@ -163,7 +163,7 @@ export default function DackhotellPage() {
           </ol>
           <p className="villkor-footer-note">
             Har du frågor om våra villkor?{' '}
-            <Link href="/contact">Kontakta oss</Link>.
+            <Link href="/kontakt.html">Kontakta oss</Link>.
           </p>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function DackhotellPage() {
           <Link href="/booking" className="dack-cta-primary">
             Skicka serviceförfrågan
           </Link>
-          <Link href="/contact" className="dack-cta-secondary">
+          <Link href="/kontakt.html" className="dack-cta-secondary">
             Kontakta oss
           </Link>
         </div>

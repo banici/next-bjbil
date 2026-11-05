@@ -114,25 +114,25 @@ useEffect(() => {
                 </Link>
               </li>
               <li>
-                <Link href="/car-makes" onClick={closeMenu}>
+                <Link href="/car-make-selection.html" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">🚗</span>
                   Våra bilmärken
                 </Link>
               </li>
               <li>
-                <Link href="/services" onClick={closeMenu}>
+                <Link href="/tjanster.html" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">⚙️</span>
                   Tjänster
                 </Link>
               </li>
               <li>
-                <Link href="/about" onClick={closeMenu}>
+                <Link href="/foretag.html" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">👥</span>
                   Om oss
                 </Link>
               </li>
               <li>
-                <Link href="/contact" onClick={closeMenu}>
+                <Link href="/kontakt.html" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">💬</span>
                   Kundservice
                 </Link>
@@ -144,7 +144,7 @@ useEffect(() => {
                 </Link>
               </li>
               <li>
-                <Link href="/tire-hotel" onClick={closeMenu}>
+                <Link href="/dack-hotell.html" onClick={closeMenu}>
                   <span className="nav-icon" aria-hidden="true">🛞</span>
                   Däckhotell
                 </Link>
@@ -184,19 +184,19 @@ useEffect(() => {
                     <Link href="/" aria-current={pathname === '/' ? 'page' : undefined}>Hem</Link>
                   </li>
                   <li>
-                    <Link href="/car-makes" aria-current={pathname === '/car-makes' ? 'page' : undefined}>Våra bilmärken</Link>
+                    <Link href="/car-make-selection.html" aria-current={pathname === '/car-make-selection.html' ? 'page' : undefined}>Våra bilmärken</Link>
                   </li>
                   <li>
-                    <Link href="/services" aria-current={pathname === '/services' ? 'page' : undefined}>Tjänster</Link>
+                    <Link href="/tjanster.html" aria-current={pathname === '/tjanster.html' ? 'page' : undefined}>Tjänster</Link>
                   </li>
                   <li>
-                    <Link href="/tire-hotel" aria-current={pathname === '/tire-hotel' ? 'page' : undefined}>Däckhotell</Link>
+                    <Link href="/dack-hotell.html" aria-current={pathname === '/dack-hotell.html' ? 'page' : undefined}>Däckhotell</Link>
                   </li>
                   <li>
-                    <Link href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>Om oss</Link>
+                    <Link href="/foretag.html" aria-current={pathname === '/foretag.html' ? 'page' : undefined}>Om oss</Link>
                   </li>
                   <li>
-                    <Link href="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Kundservice</Link>
+                    <Link href="/kontakt.html" aria-current={pathname === '/kontakt.html' ? 'page' : undefined}>Kundservice</Link>
                   </li>
                   <li className="nav-cta">
                     <Link href="/booking" aria-current={pathname === '/booking' ? 'page' : undefined}>Serviceförfrågan</Link>
