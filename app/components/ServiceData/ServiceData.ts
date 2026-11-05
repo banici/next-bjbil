@@ -2,6 +2,7 @@ export interface ServiceData {
   slug: string;
   path: string;
   title: string;
+  seoTitle: string;
   iconSrc: string;
   imageSrc: string;
   imageAlt: string;
@@ -16,6 +17,7 @@ export const SERVICES: ServiceData[] = [
     slug: 'service-underhall',
     path: '/tjanster-service.html',
     title: 'Service & Underhåll',
+    seoTitle: 'Bilservice i Mölndal',
     iconSrc: '/icons/services/ikon-service.png',
     imageSrc: '/images/service-banner/service-image-bjbil.jpg',
     imageAlt: 'Service och underhåll av bil hos Bo & Jimmy',
@@ -38,6 +40,7 @@ export const SERVICES: ServiceData[] = [
     slug: 'fordonsdiagnos',
     path: '/tjanster-motorlampa.html',
     title: 'Fordonsdiagnos',
+    seoTitle: 'Motorlampa & felsökning i Mölndal',
     iconSrc: '/icons/services/ikon-diagnos.png',
     imageSrc: '/images/service-banner/service-diagnos-fordon.jpg',
     imageAlt: 'Fordonsdiagnos och felsökning hos Bo & Jimmy',
@@ -59,6 +62,7 @@ export const SERVICES: ServiceData[] = [
     slug: 'mjukvara',
     path: '/tjanster-mjukvara.html',
     title: 'Mjukvara',
+    seoTitle: 'Mjukvaruuppdatering för bil i Mölndal',
     iconSrc: '/icons/services/ikon-mjukvara.png',
     imageSrc: '/images/service-banner/service-high-voltage.jpg',
     imageAlt: 'Mjukvaruuppdatering av bil hos Bo & Jimmy',
@@ -81,6 +85,7 @@ export const SERVICES: ServiceData[] = [
     slug: 'elbilsverkstad',
     path: '/tjanster-elbilsverkstad.html',
     title: 'Elbilsverkstad',
+    seoTitle: 'Elbilsverkstad i Mölndal',
     iconSrc: '/icons/services/ikon-high-voltage.png',
     imageSrc: '/images/service-banner/service-high-voltage.jpg',
     imageAlt: 'Elbilsverkstad och hybridservice hos Bo & Jimmy',
@@ -104,6 +109,7 @@ export const SERVICES: ServiceData[] = [
     slug: 'ac-service',
     path: '/tjanster-ac-service.html',
     title: 'AC Service',
+    seoTitle: 'AC-service i Mölndal',
     iconSrc: '/icons/services/ikon-ac.png',
     imageSrc: '/images/service-banner/service-ac-service.jpg',
     imageAlt: 'AC-service och klimatanläggning hos Bo & Jimmy',
@@ -125,6 +131,7 @@ export const SERVICES: ServiceData[] = [
     slug: 'hjulinstallning-dack',
     path: '/tjanster-missljud.html',
     title: 'Hjulinställning & Däck',
+    seoTitle: 'Hjulinställning & däck i Mölndal',
     iconSrc: '/icons/services/ikon-dack.png',
     imageSrc: '/images/service-banner/service-dack-missljud.jpg',
     imageAlt: 'Hjulinställning och däckbyte hos Bo & Jimmy',
@@ -147,6 +154,7 @@ export const SERVICES: ServiceData[] = [
     slug: 'vatgas-rengoring',
     path: '/tjanster-hydrive.html',
     title: 'Vätgas Rengöring',
+    seoTitle: 'Vätgasrengöring med Hydrive i Mölndal',
     iconSrc: '/icons/services/ikon-h2.png',
     imageSrc: '/images/service-banner/DPF-bild.jpg',
     imageAlt: 'Vätgasrengöring Hydrive hos Bo & Jimmy',
