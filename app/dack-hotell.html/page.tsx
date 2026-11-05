@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 // =============================================================================
 // app/tire-hotel/page.tsx
 // =============================================================================
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
     canonical: 'https://bjbil.se/dack-hotell.html',
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: 'Däckhotell Mölndal – Bo & Jimmy Bilservice AB',
     description:
       'Säker däckförvaring i Mölndal från 1 699 kr/säsong inkl. hjultvätt och däckbyte. Larmade lokaler.',

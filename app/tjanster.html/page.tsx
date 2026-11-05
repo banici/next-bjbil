@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     canonical: 'https://bjbil.se/tjanster.html',
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: 'Våra tjänster – Bo & Jimmy Bilservice AB',
     description:
       'Service, diagnos, elbilsverkstad, AC, hjulinställning och mer – för BMW, MINI, Tesla och VAG i Mölndal.',

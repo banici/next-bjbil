@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from 'next';
 import CarMakes from '../components/CarMakeSelection/CarMakeSelection';
  
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     canonical: 'https://bjbil.se/car-make-selection.html',
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: 'Våra bilmärken – BMW, MINI, Tesla & VAG | Bo & Jimmy Bilservice',
     description:
       'Specialiserad service för BMW, MINI, Tesla och VAG i Mölndal. Fristående verkstad – jobbar enligt tillverkarstandard.',

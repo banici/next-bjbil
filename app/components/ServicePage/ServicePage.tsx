@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `https://bjbil.se${service.path}`,
     },
     openGraph: {
+    ...sharedOpenGraph,
       title: `${service.title} – Bo & Jimmy Bilservice AB`,
       description: service.metaDescription,
       url: `https://bjbil.se${service.path}`,

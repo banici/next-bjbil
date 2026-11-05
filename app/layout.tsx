@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "./components/Footer/Footer";
@@ -53,22 +54,7 @@ export const metadata: Metadata = {
   },
 
   // Open Graph defaults – individual pages override title/description/url.
-  openGraph: {
-    siteName: "Bo & Jimmy Bilservice AB",
-    locale: "sv_SE",
-    type: "website",
-    // Place an OG image (1200×630 px recommended) at /public/images/og-default.jpg
-    // and uncomment the lines below. Every page that doesn't supply its own
-    // openGraph.images will fall back to this one.
-    // images: [
-    //   {
-    //     url: "/images/og-default.jpg",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Bo & Jimmy Bilservice AB – Bilverkstad i Mölndal sedan 1982",
-    //   },
-    // ],
-  },
+  openGraph: sharedOpenGraph,
 
   // Verifies ownership in Bing Webmaster Tools (value carried over from old site).
   verification: {
@@ -94,7 +80,7 @@ const jsonLd = {
   telephone: "+46-31-847529",
   email: "bayerische@telia.com",
   foundingDate: "1982",
-  image: "https://bjbil.se/images/og-default.jpg", // update when image exists
+  image: "https://bjbil.se/images/bjbilnyckel-og.jpg",
   logo: "https://bjbil.se/images/boJimmyLoggaSVG.svg",
   address: {
     "@type": "PostalAddress",

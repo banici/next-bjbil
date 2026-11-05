@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     canonical: 'https://bjbil.se/foretag.html',
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: 'Om oss – Bo & Jimmy Bilservice AB | Familjeföretag sedan 1982',
     description:
       'Familjeföretag med över 40 års erfarenhet av bilservice i Mölndal. Träffa teamet bakom verkstaden.',

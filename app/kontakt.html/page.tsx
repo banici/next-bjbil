@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from 'next';
 import CustomerService from '../components/CustomerService/CustomerService';
  
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: 'https://bjbil.se/kontakt.html',
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: 'Kundtjänst & Kontakt – Bo & Jimmy Bilservice AB',
     description:
       'Ring 031-84 75 29, maila eller besök oss på Aminogatan 15E i Mölndal. FAQ och garantiinfo.',

@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from 'next';
 import NostalgiGallery from '../components/NostalgiGallery/NostalgiGallery';
 
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     canonical: 'https://bjbil.se/nostalgi-page.html',
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: 'Nostalgialbum – Bo & Jimmy Bilservice AB',
     description: 'Över 40 år av passion för bilar – i bilder från vår verkstad i Mölndal.',
     url: 'https://bjbil.se/nostalgi-page.html',

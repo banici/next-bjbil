@@ -1,3 +1,4 @@
+import { sharedOpenGraph } from '@/app/lib/openGraph';
 import type { Metadata } from 'next';
 import BookingForm from '../components/BookingForm/BookingForm';
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: 'https://bjbil.se/booking',
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: 'Serviceförfrågan – Bo & Jimmy Bilservice AB',
     description: 'Fyll i formuläret så kontaktar vi dig med lediga tider inom en arbetsdag.',
     url: 'https://bjbil.se/booking',
