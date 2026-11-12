@@ -62,7 +62,7 @@ export default function CarMakeContent({ makes }: Props) {
       </div>
 
       {/* Mobile swipe carousel */}
-      <MobileCarousel makes={makes} onSelect={handleSelect} activeMake={activeMake} />
+      <MobileCarousel makes={makes} onSelect={setActiveMake} activeMake={activeMake} />
 
       {/* Info panel */}
       {selected && (
@@ -147,22 +147,19 @@ function MobileCarousel({
   onSelect: (id: string) => void;
   activeMake: string | null;
 }) {
-  const [index, setIndex] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
 
+  const index = Math.max(0, makes.findIndex(make => make.id === activeMake));
   const total = makes.length;
   const prevIndex = (index - 1 + total) % total;
   const nextIndex = (index + 1) % total;
 
   const prev = () => {
-    setAnimKey(k => k + 1);
-    setIndex(i => (i - 1 + total) % total);
+    onSelect(makes[prevIndex].id);
   };
 
   const next = () => {
-    setAnimKey(k => k + 1);
-    setIndex(i => (i + 1) % total);
+    onSelect(makes[nextIndex].id);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => setTouchStartX(e.touches[0].clientX);
@@ -231,10 +228,7 @@ function MobileCarousel({
             aria-selected={i === index}
             aria-label={make.label}
             className={`cm-dot ${i === index ? 'active' : ''}`}
-            onClick={() => {
-              setAnimKey(k => k + 1);
-              setIndex(i);
-            }}
+            onClick={() => onSelect(make.id)}
           />
         ))}
       </div>
