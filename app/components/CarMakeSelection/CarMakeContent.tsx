@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { CarMake } from './carMakesData';
@@ -13,8 +13,45 @@ interface Props {
 export default function CarMakeContent({ makes }: Props) {
   const [activeMake, setActiveMake] = useState<string | null>(null);
   const [hoveredMake, setHoveredMake] = useState<string | null>(null);
+  const [bookingVisibleFor, setBookingVisibleFor] = useState<string | null>(null);
+  const firstSectionRef = useRef<HTMLElement | null>(null);
   
   const selected = makes.find(m => m.id === activeMake) ?? null;
+  const bookingVisible = activeMake !== null && bookingVisibleFor === activeMake;
+
+  useEffect(() => {
+    const section = firstSectionRef.current;
+    if (!section || !activeMake) return;
+
+    const mobile = window.matchMedia('(max-width: 48rem)');
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rect = section.getBoundingClientRect();
+      const height = window.innerHeight;
+
+      // Use the same scroll threshold in both directions.
+      const visible = mobile.matches && rect.top < height * 0.35;
+      setBookingVisibleFor(visible ? activeMake : null);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    const observer = new ResizeObserver(scheduleUpdate);
+    observer.observe(section);
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    mobile.addEventListener('change', scheduleUpdate);
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      mobile.removeEventListener('change', scheduleUpdate);
+    };
+  }, [activeMake]);
 
   const handleSelect = (id: string) => {
     setActiveMake(prev => (prev === id ? null : id));
@@ -81,8 +118,8 @@ export default function CarMakeContent({ makes }: Props) {
           </nav>
 
           {/* Sections */}
-          {selected.sections.map(sec => (
-            <article key={sec.id} className="cm-section" id={sec.anchorId}>
+          {selected.sections.map((sec, index) => (
+            <article ref={index === 0 ? firstSectionRef : undefined} key={sec.id} className="cm-section" id={sec.anchorId}>
               <h3 className="cm-section-heading">{sec.heading}</h3>
               <div className="cm-section-body">
                 {sec.imageSrc && (
@@ -124,7 +161,12 @@ export default function CarMakeContent({ makes }: Props) {
         </div>
       )}
       {selected && (
-        <nav className="cm-mobile-booking" aria-label={`Bokning och kontakt för ${selected.label}`}>
+        <nav
+          className={`cm-mobile-booking${bookingVisible ? ' is-visible' : ''}`}
+          aria-label={`Bokning och kontakt för ${selected.label}`}
+          aria-hidden={!bookingVisible}
+          inert={!bookingVisible}
+        >
           <Link href="/booking" className="cm-btn-primary">
             Boka service för {selected.label}
           </Link>
