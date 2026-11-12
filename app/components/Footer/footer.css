@@ -22,37 +22,51 @@
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 3.125rem;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 .footer-logo {
-  flex: 1;
-  max-width: 29.375rem;
+  flex: 0 1 15rem;
+  max-width: 18.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 2.25rem;
-  transform: translateY(-3.4375rem);
   order: 1;
 }
 
 .footer-wrapper {
-  flex: 2;
+  flex: 1 1 42rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 15%;
+  gap: 2rem 3rem;
   justify-content: center;
   order: 2;
 }
 
-#nyckel-footer {
-  width: 100%;
+/* Logotypen inuti about-box används endast på desktop. */
+.about-logo {
+  display: none;
 }
 
-#approved-logo {
+.about-logo a {
+  display: block;
+}
+
+.about-logo img {
   width: 100%;
+  height: auto;
+  display: block;
+}
+
+#nyckel-footer {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .about-box,
@@ -122,7 +136,7 @@
 }
 
 #nyckel-link {
-  width: 70%;
+  width: 100%;
 }
 
 .footer a {
@@ -135,6 +149,7 @@
 }
 
 .footer-logo a,
+.about-logo a,
 .social-media-box a {
   text-decoration: none;
   display: inline-block;
@@ -189,6 +204,73 @@
   border-radius: 0.125rem;
 }
 
+@media (min-width: 48.001rem) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* På desktop flyttas logotypen in i about-box. */
+  .footer-logo {
+    display: none;
+  }
+
+  .about-logo {
+    display: block;
+    width: 100%;
+    max-width: 18rem;
+    margin-top: -0.4rem;
+    margin-left: -1.4rem;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 3rem;
+    align-items: start;
+    width: 100%;
+    max-width: 60rem;
+    flex: 0 0 auto;
+    margin: 0 auto;
+    order: 0;
+  }
+
+  .footer-wrapper > section {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-wrapper h4 {
+    margin-top: 0;
+  }
+
+  .hours-list {
+    gap: 0.125rem;
+  }
+
+  .hours-list-item {
+    justify-content: flex-start;
+    gap: 1rem;
+    line-height: 1.5;
+  }
+
+  .hours-list-item dt {
+    flex: 0 0 5.5rem;
+  }
+
+  .hours-list-item dd {
+    text-align: left;
+  }
+}
+
+@media (min-width: 75rem) {
+  .footer-wrapper {
+    max-width: 66rem;
+  }
+}
+
 @media (max-width: 48rem) {
   .about-box,
   .contact-box,
@@ -205,9 +287,11 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 0.5rem;
   }
 
   .footer-logo {
+    flex: 0 1 auto;
     order: 2;
     display: flex;
     flex-direction: column;
@@ -217,15 +301,10 @@
     transform: none;
   }
 
-  #nyckel-footer {
+  .footer-wrapper {
+    flex: 0 1 auto;
     width: 100%;
-    height: 9rem;
-  }
-
-  #approved-logo {
-    margin-top: 1rem;
-    width: 100%;
-    height: 6rem;
+    gap: 1rem;
   }
 
   .footer ul,

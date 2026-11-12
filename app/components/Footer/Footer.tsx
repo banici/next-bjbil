@@ -28,6 +28,18 @@ export default function Footer() {
                 <span className="visually-hidden"> (öppnas i Google Maps i nytt fönster)</span>
               </Link>
             </address>
+
+            <div className="about-logo">
+              <Link href="/" aria-label="Till startsidan">
+                <Image
+                  src="/images/boJimmyLoggaSVG.svg"
+                  alt="Bo & Jimmy Bilservice logotyp"
+                  width="300"
+                  height="100"
+                  loading="lazy"
+                />
+              </Link>
+            </div>
           </section>
 
           <section className="hours-box" aria-labelledby="footer-hours-title">
@@ -110,21 +122,6 @@ export default function Footer() {
             />
           </Link>
 
-          <Link
-            href="https://www.godkandbilverkstad.se/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Läs mer om Godkänd Bilverkstad (öppnas i nytt fönster)"
-          >
-            <Image
-              src="/images/godkand-bilverkstad.jpg"
-              id="approved-logo"
-              alt="Certifierad som Godkänd Bilverkstad"
-              width="150"
-              height="150"
-              loading="lazy"
-            />
-          </Link>
         </div>
       </div>
     </footer>
