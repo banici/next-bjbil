@@ -117,8 +117,21 @@ export default function CarMakeContent({ makes }: Props) {
             <Link href="/booking" className="cm-btn-primary">
               Boka service för {selected.label}
             </Link>
+            <p className="cm-contact-note">
+              Har du frågor? <Link href="/kontakt.html">Kontakta oss.</Link>
+            </p>
           </div>
         </div>
+      )}
+      {selected && (
+        <nav className="cm-mobile-booking" aria-label={`Bokning och kontakt för ${selected.label}`}>
+          <Link href="/booking" className="cm-btn-primary">
+            Boka service för {selected.label}
+          </Link>
+          <Link href="/kontakt.html" className="cm-mobile-contact">
+            Kontakta oss
+          </Link>
+        </nav>
       )}
     </div>
   );
