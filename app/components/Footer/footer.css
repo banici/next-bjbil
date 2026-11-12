@@ -225,19 +225,22 @@
     margin-left: -1.4rem;
   }
 
+  /* Kolumnerna storleksätts efter innehållet så att gruppen blir visuellt centrerad. */
   .footer-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem 3rem;
-    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+    row-gap: 2rem;
     width: 100%;
-    max-width: 60rem;
     flex: 0 0 auto;
-    margin: 0 auto;
     order: 0;
   }
 
   .footer-wrapper > section {
+    /* Aldrig krympa boxarna – då bryts öppettiderna sönder. */
+    flex: 0 0 auto;
     min-width: 0;
     overflow-wrap: anywhere;
   }
@@ -258,16 +261,12 @@
 
   .hours-list-item dt {
     flex: 0 0 5.5rem;
+    white-space: nowrap;
   }
 
   .hours-list-item dd {
     text-align: left;
-  }
-}
-
-@media (min-width: 75rem) {
-  .footer-wrapper {
-    max-width: 66rem;
+    white-space: nowrap;
   }
 }
 
